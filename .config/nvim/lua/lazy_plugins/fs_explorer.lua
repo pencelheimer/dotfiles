@@ -57,7 +57,6 @@ local M = {
         ['<C-h>'] = { 'actions.select', opts = { horizontal = true } },
         ['<C-t>'] = { 'actions.select', opts = { tab = true } },
         ['<C-p>'] = 'actions.preview',
-        ['<C-c>'] = { 'actions.close', mode = 'n' },
         ['q'] = { 'actions.close', mode = 'n' },
         ['<ESC>'] = { 'actions.close', mode = 'n' },
         ['<C-l>'] = 'actions.refresh',

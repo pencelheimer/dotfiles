@@ -83,13 +83,13 @@ function cd
     z $argv
 end
 
-function cp
-    advcp -g $argv
-end
+# function cp
+#     advcp -g $argv
+# end
 
-function mv
-    advmv -g $argv
-end
+# function mv
+#     advmv -g $argv
+# end
 
 function rm
     trash $argv

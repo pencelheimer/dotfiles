@@ -82,7 +82,8 @@ vim.o.foldenable = true
 vim.opt.fileencodings = 'ucs-bom,utf-8,cp1251,latin1'
 
 vim.opt.spell = true
-vim.opt.spelllang = { 'en_us', 'uk' }
+-- vim.opt.spelllang = { 'en_us', 'uk' }
+vim.opt.spelllang = { 'en_us' }
 vim.opt.spelloptions = 'camel'
 
 vim.filetype.add {

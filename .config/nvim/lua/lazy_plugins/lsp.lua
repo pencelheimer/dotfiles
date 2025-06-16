@@ -18,7 +18,8 @@ local M = {
         'lua_ls',
         'emmet_language_server',
         'hyprls',
-        'rust_analyzer'
+        'rust_analyzer',
+        'nixd'
       })
     end,
   }
