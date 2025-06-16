@@ -71,23 +71,23 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- vim.o.fillchars = [[eob: ,fold: ,foldopen:▼,foldsep: ,foldclose:⏵]]
-vim.o.fillchars = [[eob: ,fold: ,foldopen:󰄼,foldsep: ,foldclose:󰄾]]
-vim.o.foldcolumn = '1' -- '0' is not bad
-vim.o.foldlevel = 99   -- Using ufo provider need a large value, feel free to decrease the value
-vim.o.foldlevelstart = 99
-vim.o.foldenable = true
+vim.o.foldcolumn      = '1'
+vim.o.foldenable      = true
+vim.o.foldlevel       = 99
+vim.o.foldmethod      = "expr"
+vim.o.foldexpr        = "v:lua.vim.treesitter.foldexpr()"
 
--- vim.opt.fileencoding = 'cp1251'
 vim.opt.fileencodings = 'ucs-bom,utf-8,cp1251,latin1'
 
-vim.opt.spell = true
+vim.opt.spell         = true
 -- vim.opt.spelllang = { 'en_us', 'uk' }
-vim.opt.spelllang = { 'en_us' }
-vim.opt.spelloptions = 'camel'
+vim.opt.spelllang     = { 'en_us' }
+vim.opt.spelloptions  = 'camel'
 
 vim.filetype.add {
-  extension = { gotmpl = 'gotmpl' },
+  extension = {
+    gotmpl = 'gotmpl'
+  },
   pattern = {
     ['.*/waybar/config'] = 'jsonc',
     ['.*/mako/config'] = 'dosini',
