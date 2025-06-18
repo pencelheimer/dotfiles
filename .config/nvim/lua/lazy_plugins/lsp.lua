@@ -19,7 +19,8 @@ local M = {
         'emmet_language_server',
         'hyprls',
         'rust_analyzer',
-        'nixd'
+        'nixd',
+        "crates.nvim",
       })
     end,
   }

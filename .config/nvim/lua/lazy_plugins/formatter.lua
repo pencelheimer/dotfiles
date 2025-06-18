@@ -42,5 +42,9 @@ return {
         end
       end)
     end, { desc = 'Format selection' })
+
+    vim.keymap.set('', '<leader>tf', function()
+      vim.g.disable_autoformat = not vim.g.disable_autoformat
+    end, { desc = 'Toggle autoformat' })
   end,
 }

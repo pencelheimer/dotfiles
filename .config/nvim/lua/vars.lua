@@ -71,22 +71,22 @@ vim.opt.scrolloff = 10
 vim.opt.hlsearch = true
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
-vim.o.foldcolumn      = '1'
-vim.o.foldenable      = true
-vim.o.foldlevel       = 99
-vim.o.foldmethod      = "expr"
-vim.o.foldexpr        = "v:lua.vim.treesitter.foldexpr()"
+vim.o.foldcolumn = '1'
+vim.o.foldenable = true
+vim.o.foldlevel = 99
+vim.opt.foldmethod = 'expr'
+vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 
 vim.opt.fileencodings = 'ucs-bom,utf-8,cp1251,latin1'
 
-vim.opt.spell         = true
+vim.opt.spell = true
 -- vim.opt.spelllang = { 'en_us', 'uk' }
-vim.opt.spelllang     = { 'en_us' }
-vim.opt.spelloptions  = 'camel'
+vim.opt.spelllang = { 'en_us' }
+vim.opt.spelloptions = 'camel'
 
 vim.filetype.add {
   extension = {
-    gotmpl = 'gotmpl'
+    gotmpl = 'gotmpl',
   },
   pattern = {
     ['.*/waybar/config'] = 'jsonc',
