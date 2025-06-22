@@ -13,6 +13,7 @@
 set -x PATH $PATH $HOME/.local/bin
 set -x PATH $PATH $HOME/.cargo/bin
 set -x PATH $PATH $HOME/go/bin
+set -x PATH $PATH $HOME/.local/share/gem/ruby/3.4.0/bin
 
 set -x WINEPATH $WINEPATH /usr/x86_64-w64-mingw32/bin
 
@@ -23,6 +24,8 @@ set -x UNI "$HOME/Documents/NURE"
 
 set -x EDITOR nvim
 set -x DIFFPROG "nvim -d"
+
+set -x XDG_CONFIG_HOME "$HOME/.config"
 # set -x PAGER bat
 # set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 
@@ -111,10 +114,6 @@ function say
     cowsay $argv
 end
 
-function dumpbin
-    wine /opt/dumpbin/dumpbin.exe $argv
-end
-
 function init_c_winapi
     echo "Writing .clangd file for Windows API development..."
 
@@ -154,6 +153,16 @@ function export-esp-idf
     . /home/dumbnerd/stuff/projects/_probe/esp/esp-idf/export.fish
 end
 
+function tmux_attach
+    if tmux has-session -t default 2>/dev/null
+        tmux attach-session -t default
+    else
+        tmux new-session -s default
+    end
+end
+
+alias ta='tmux_attach'
+
 ### Shell Integrations
 
 # Starship prompt initialization for Fish
@@ -165,6 +174,11 @@ zoxide init fish | source
 # fzf integration for Fish
 fzf --fish | source
 
+# tmux-sessionizer completions
+COMPLETE=fish tms | source
+
+# Ruby venv manager
+rbenv init - | source
 
 ### fzf Settings
 set -x FZF_DEFAULT_COMMAND "fd --hidden --strip-cwd-prefix --exclude .git"

@@ -80,8 +80,8 @@ vim.wo.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
 vim.opt.fileencodings = 'ucs-bom,utf-8,cp1251,latin1'
 
 vim.opt.spell = true
--- vim.opt.spelllang = { 'en_us', 'uk' }
-vim.opt.spelllang = { 'en_us' }
+vim.opt.spelllang = { 'en_us', 'uk' }
+-- vim.opt.spelllang = { 'en_us' }
 vim.opt.spelloptions = 'camel'
 
 vim.filetype.add {
@@ -93,6 +93,7 @@ vim.filetype.add {
     ['.*/mako/config'] = 'dosini',
     ['.*/kitty/*.conf'] = 'bash',
     ['.*/hypr/.*%.conf'] = 'hyprlang',
+    ['.*tmux.conf'] = 'tmux',
   },
 }
 

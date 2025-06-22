@@ -34,8 +34,10 @@
         "format": "{icon}",
         "format-icons": {
             "default": "",
-            "browser": "󰖟",
-            "social": ""
+            "terminal": "",
+            "social": "",
+            "other": "",
+            "browser": "󰖟"
         },
         "on-click": "activate",
         "disable-scroll": true,

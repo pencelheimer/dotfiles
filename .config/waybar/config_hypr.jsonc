@@ -34,10 +34,17 @@
         ],
         // hyprland
         "hyprland/workspaces": {
-            "format": "{name}",
+            "format": "{icon}",
             "on-click": "activate",
             "disable-scroll": true,
-            "all-outputs": true
+            "format-icons": {
+                "1": "",
+                "2": "󰖟",
+                "3": "",
+                "4": "",
+                "5": "5",
+                "6": "6",
+            },
         },
         "hyprland/window": {
             "format": "{}",

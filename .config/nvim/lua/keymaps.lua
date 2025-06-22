@@ -1,12 +1,7 @@
 -- Diagnostic keymaps
-vim.keymap.set(
-  'n',
-  '<leader>e',
-  function()
-    vim.diagnostic.open_float({ border = "single" })
-  end,
-  { desc = 'Show diagnostic [E]rror messages' }
-)
+vim.keymap.set('n', '<leader>e', function()
+  vim.diagnostic.open_float { border = 'single' }
+end, { desc = 'Show diagnostic [E]rror messages' })
 vim.keymap.set('n', '<Leader>q', function()
   vim.diagnostic.setloclist { open = false }
   local winid = vim.fn.getloclist(0, { winid = 0 }).winid
@@ -21,10 +16,10 @@ end, { desc = 'Toggle diagnostic [Q]uickfix list' })
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Move between windows
-vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+-- vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
+-- vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
+-- vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
+-- vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- Duplicate a line and comment out the first line
 vim.keymap.set('n', 'yc', function()

@@ -1,0 +1,15 @@
+display_full_path = true
+session_sort_order = "LastAttached"
+bookmarks = [
+    "~/dotfiles/.config/nvim",
+    "~/dotfiles/.config",
+    "/home/dumbnerd/Documents/nure/semester-4",
+    "/home/dumbnerd/Documents/nure/semester-5",
+]
+
+[[search_dirs]]
+path = "/home/dumbnerd/stuff/projects"
+depth = 10
+
+[shortcuts]
+ctrl-y = "confirm"

@@ -5,7 +5,7 @@ local M = {
     event = 'BufReadPre',
     dependencies = { { 'j-hui/fidget.nvim', opts = {} } },
     config = function()
-      vim.lsp.enable({
+      vim.lsp.enable {
         'taplo',
         'phpactor',
         'jsonls',
@@ -20,10 +20,12 @@ local M = {
         'hyprls',
         'rust_analyzer',
         'nixd',
-        "crates.nvim",
-      })
+        'crates.nvim',
+        'clojure_lsp',
+        'ruby_lsp',
+      }
     end,
-  }
+  },
 }
 
 return M

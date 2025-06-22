@@ -1,7 +1,8 @@
-# Auto start Hyprland on tty1
+# Auto start wm on tty1
 if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" -eq 1 ]; then
   mkdir -p ~/.cache
-  exec Hyprland > ~/.cache/hyprland.log 2>&1
+  # exec Hyprland > ~/.cache/hyprland.log 2>&1
+  exec niri-session
 fi
 
 # Setup zinit plugin manager

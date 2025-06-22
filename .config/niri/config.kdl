@@ -35,7 +35,7 @@ input {
 
     warp-mouse-to-focus
 
-    workspace-auto-back-and-forth
+    // workspace-auto-back-and-forth
 
     keyboard {
         xkb {
@@ -89,7 +89,6 @@ output "DP-3" {
     position x=0 y=0
 }
 
-
 output "DP-5" {
     // off
     mode "1366x768@59.79"
@@ -127,7 +126,7 @@ layout {
     focus-ring { off; }
 
     border {
-        width 4
+        width 3
         active-color "#dcdcdc"
     }
 
@@ -215,12 +214,20 @@ layer-rule {
     block-out-from "screencast"
 }
 
-workspace "social" {
+workspace "terminal" {
     open-on-output "eDP-1"
 }
 
 workspace "browser" {
-    open-on-output "DP-5"
+    open-on-output "DP-1"
+}
+
+workspace "other" {
+    open-on-output "DP-1"
+}
+
+workspace "social" {
+    open-on-output "eDP-1"
 }
 
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
@@ -236,6 +243,7 @@ window-rule {
     match app-id=r#"vesktop"#
     match app-id=r#"thunderbird"#
     match app-id=r#"cinny"#
+    match app-id=r#"signalbeta"#
 
     open-on-workspace "social"
 }
@@ -265,6 +273,11 @@ window-rule {
     match app-id=r#"Bitwarden"#
 
     block-out-from "screencast"
+}
+
+window-rule {
+    match app-id="kitty"
+    open-on-workspace "terminal"
 }
 
 window-rule {
@@ -404,16 +417,16 @@ binds {
     Mod+Shift+WheelScrollRight                 { move-column-right; }
     Mod+Shift+WheelScrollLeft                  { move-column-left; }
 
-    Mod+1       { focus-workspace 1; }
-    Mod+2       { focus-workspace 2; }
-    Mod+3       { focus-workspace 3; }
-    Mod+4       { focus-workspace 4; }
+    Mod+1       { focus-workspace "terminal"; }
+    Mod+2       { focus-workspace "browser"; }
+    Mod+3       { focus-workspace "other"; }
+    Mod+4       { focus-workspace "social"; }
     Mod+5       { focus-workspace 5; }
     Mod+6       { focus-workspace 6; }
-    Mod+Ctrl+1  { move-column-to-workspace 1; }
-    Mod+Ctrl+2  { move-column-to-workspace 2; }
-    Mod+Ctrl+3  { move-column-to-workspace 3; }
-    Mod+Ctrl+4  { move-column-to-workspace 4; }
+    Mod+Ctrl+1  { move-column-to-workspace "terminal"; }
+    Mod+Ctrl+2  { move-column-to-workspace "browser"; }
+    Mod+Ctrl+3  { move-column-to-workspace "other"; }
+    Mod+Ctrl+4  { move-column-to-workspace "social"; }
     Mod+Ctrl+5  { move-column-to-workspace 5; }
     Mod+Ctrl+6  { move-column-to-workspace 6; }
 
