@@ -91,7 +91,20 @@ require('lazy').setup({
     'saecki/crates.nvim',
     tag = 'stable',
     event = { 'BufRead Cargo.toml' },
-    opts = { lsp = { enabled = true, actions = true, completion = true, hover = true } },
+    opts = {
+      popup = { border = 'single' },
+      lsp = {
+        enabled = true,
+        actions = true,
+        completion = true,
+        hover = true,
+      },
+    },
+  },
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^6', -- Recommended
+    lazy = false, -- This plugin is already lazy
   },
 
   { 'Olical/conjure', ft = { 'clj' } },

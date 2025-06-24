@@ -61,7 +61,7 @@ input {
         natural-scroll
         accel-profile "flat"
         scroll-method "two-finger"
-        scroll-factor 2
+        scroll-factor 0.4
         tap-button-map "left-right-middle"
     }
 
@@ -70,6 +70,14 @@ input {
         accel-profile "flat"
         accel-speed 0.4
     }
+}
+
+gestures {
+    hot-corners { off; }
+}
+
+overview {
+    // zoom 0.7
 }
 
 // niri msg outputs
@@ -135,7 +143,11 @@ layout {
     }
 
     tab-indicator {
-        width 10
+        active-color "#FFDD33"
+        inactive-color "#AFAFD799"
+        urgent-color "#FF4F58"
+
+        width 5
         gap 2
         gaps-between-tabs 2
         length total-proportion=1.0
@@ -156,7 +168,6 @@ layout {
         bottom 64
     }
 }
-
 
 spawn-at-startup "swww-daemon"
 spawn-at-startup "syshud"
@@ -230,6 +241,10 @@ workspace "social" {
     open-on-output "eDP-1"
 }
 
+workspace "games" {
+    open-on-output "eDP-1"
+}
+
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 window-rule {
     geometry-corner-radius 2
@@ -291,12 +306,14 @@ window-rule {
     open-maximized false
     min-width  460
     min-height 800
+    open-on-workspace "games"
 }
 
 window-rule {
     match app-id="^steam$" title="^Friends List$"
     default-column-width { fixed 340; }
     open-maximized false
+    open-on-workspace "games"
 }
 
 window-rule {
@@ -323,8 +340,32 @@ window-rule {
 window-rule {
     match app-id="^steam$"
     match app-id="^kitty$"
+    match app-id=r#"io.github.kukuruzka165.materialgram"#
+    match app-id=r#"signalbeta"#
 
     default-column-width { proportion 1.0; }
+}
+
+window-rule {
+    match title="^gsr notify$"
+
+    default-floating-position x=4 y=4 relative-to="top-right"
+}
+
+window-rule {
+    match app-id="^com.gabm.satty$"
+
+    open-fullscreen true
+}
+
+/-window-rule { // don't work
+    match title="^gsr ui$"
+
+    open-fullscreen false
+    open-maximized false
+    open-floating true
+    min-width 1920
+    min-height 1080
 }
 
 binds {
@@ -340,8 +381,10 @@ binds {
     Mod+S { focus-workspace "social"; }
     Mod+B { focus-workspace "browser"; }
 
-    Mod+W       hotkey-overlay-title="Open/Close Waybar"        { spawn "bash" "-c" "killall waybar || waybar --config ~/.config/waybar/config_niri.jsonc"; }
-    Mod+Shift+W hotkey-overlay-title="Toggle Waybar visibility" { spawn "killall" "-SIGUSR1" "waybar"; }
+    Mod+W hotkey-overlay-title="Toggle overview" { toggle-overview; }
+
+    Mod+Shift+W      hotkey-overlay-title="Open/Close Waybar"        { spawn "bash" "-c" "killall waybar || waybar --config ~/.config/waybar/config_niri.jsonc"; }
+    Mod+Shift+Ctrl+W hotkey-overlay-title="Toggle Waybar visibility" { spawn "killall" "-SIGUSR1" "waybar"; }
 
 
     XF86Keyboard { spawn "~/.scripts/toggle_touchpad.sh"; }
@@ -366,6 +409,7 @@ binds {
     Print       { screenshot; }
     Mod+Print   { screenshot-screen; }
     Shift+Print { screenshot-window; }
+    Mod+Shift+E { spawn "bash" "-c" r#"wl-paste | satty -f -"#; }
 
     Mod+Z       hotkey-overlay-title="Spawn Screen Recorder" { spawn  "gsr-ui" "launch-show"; }
     ALT+F9      { spawn "gsr-ui-cli" "toggle-record"; }
@@ -417,18 +461,18 @@ binds {
     Mod+Shift+WheelScrollRight                 { move-column-right; }
     Mod+Shift+WheelScrollLeft                  { move-column-left; }
 
-    Mod+1       { focus-workspace "terminal"; }
-    Mod+2       { focus-workspace "browser"; }
-    Mod+3       { focus-workspace "other"; }
-    Mod+4       { focus-workspace "social"; }
-    Mod+5       { focus-workspace 5; }
-    Mod+6       { focus-workspace 6; }
-    Mod+Ctrl+1  { move-column-to-workspace "terminal"; }
-    Mod+Ctrl+2  { move-column-to-workspace "browser"; }
-    Mod+Ctrl+3  { move-column-to-workspace "other"; }
-    Mod+Ctrl+4  { move-column-to-workspace "social"; }
-    Mod+Ctrl+5  { move-column-to-workspace 5; }
-    Mod+Ctrl+6  { move-column-to-workspace 6; }
+    Mod+1        { focus-workspace "terminal"; }
+    Mod+2        { focus-workspace "browser"; }
+    Mod+3        { focus-workspace "other"; }
+    Mod+4        { focus-workspace "social"; }
+    Mod+5        { focus-workspace 5; }
+    Mod+6        { focus-workspace 6; }
+    Mod+Shift+1  { move-column-to-workspace "terminal"; }
+    Mod+Shift+2  { move-column-to-workspace "browser"; }
+    Mod+Shift+3  { move-column-to-workspace "other"; }
+    Mod+Shift+4  { move-column-to-workspace "social"; }
+    Mod+Shift+5  { move-column-to-workspace 5; }
+    Mod+Shift+6  { move-column-to-workspace 6; }
 
     Mod+R       { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
@@ -445,6 +489,5 @@ binds {
     Mod+Shift+Minus { set-window-height "-1%"; }
     Mod+Shift+Equal { set-window-height "+1%"; }
 
-    Mod+Shift+E     { quit; }
     Ctrl+Alt+Delete { quit; }
 }
