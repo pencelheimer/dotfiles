@@ -101,11 +101,11 @@ require('lazy').setup({
       },
     },
   },
-  {
-    'mrcjkb/rustaceanvim',
-    version = '^6', -- Recommended
-    lazy = false, -- This plugin is already lazy
-  },
+  -- {
+  --   'mrcjkb/rustaceanvim',
+  --   version = '^6', -- Recommended
+  --   lazy = false, -- This plugin is already lazy
+  -- },
 
   { 'Olical/conjure', ft = { 'clj' } },
   { 'TreyBastian/nvim-jack-in', config = true },

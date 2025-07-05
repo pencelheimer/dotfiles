@@ -11,6 +11,7 @@ search_paths = [
   "~/dotfiles/.config",
   "~/stuff/projects",
   "~/stuff/projects/Shum",
+  "~/stuff/projects/_linerds",
 ]
 
 ignore = Regexp.union([

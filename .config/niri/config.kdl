@@ -54,7 +54,7 @@ input {
     }
 
     touchpad {
-        // off
+           // off // touchpad
         tap
         dwt // disable while typing
         dwtp // disable while trackpointing
@@ -86,7 +86,15 @@ output "eDP-1" {
     mode "1920x1080@60"
     scale 1
     transform "normal"
-    position x=1920 y=540
+    position x=0 y=0
+}
+
+output "HDMI-A-2" {
+    // off
+    // mode "1920x1080@60"
+    scale 1
+    transform "normal"
+    position x=1920 y=0
 }
 
 output "DP-3" {
@@ -387,7 +395,9 @@ binds {
     Mod+Shift+Ctrl+W hotkey-overlay-title="Toggle Waybar visibility" { spawn "killall" "-SIGUSR1" "waybar"; }
 
 
-    XF86Keyboard { spawn "~/.scripts/toggle_touchpad.sh"; }
+    XF86Keyboard {
+        spawn "bash" "-c" r#"sed -i -E 's/^( *)\/\/( off \/\/ touchpad)/\1\2/; t; s/^( *)(off \/\/ touchpad)/\1\/\/\ \2/' ~/.config/niri/config.kdl"#
+    }
 
     XF86MonBrightnessUP   allow-when-locked=true { spawn "brightnessctl" "s" "5%+"; }
     XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "s" "5%-"; }

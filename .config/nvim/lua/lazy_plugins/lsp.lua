@@ -23,6 +23,7 @@ local M = {
         'crates.nvim',
         'clojure_lsp',
         'ruby_lsp',
+        'qmlls',
       }
     end,
   },

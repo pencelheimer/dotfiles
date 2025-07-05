@@ -1,0 +1,17 @@
+# [build]
+# rustc-wrapper = "sccache"
+# rustflags = ["-Z", "threads=8"]
+#
+# [unstable]
+# codegen-backend = true
+#
+# [profile.dev]
+# opt-level = 1
+# codegen-backend = "cranelift"
+#
+# [profile.dev.package."*"]
+# opt-level = 3
+#
+# [target.x86_64-unknown-linux-gnu]
+# linker = "/usr/bin/clang"
+# rustflags = ["-C", "link-arg=-fuse-ld=/usr/bin/mold"] # "target-cpu=native"

@@ -3,14 +3,18 @@
 
 [gpg]
     format = ssh
+[tag]
+    gpgSign = true
+[commit]
+    gpgsign = true
+[gpg "ssh"]
+    allowedSignersFile = ~/.config/git/allowed_signers
+
+[log]
+    showSignature = true
+    abbrevCommit = true
 
 [user]
-	email = pencelheimer@proton.me
-	name = pencelheimer
-	signingkey = /home/dumbnerd/.ssh/github-pencelheimer-id.pub
-
-[includeIf "gitdir:/home/dumbnerd/Documents/nure/"]
-    path = /home/dumbnerd/.config/git/nure
-[safe]
-	directory = /home/dumbnerd/stuff/projects/pico-fido2/pico-keys-sdk/mbedtls
-	directory = /home/dumbnerd/stuff/projects/pico-fido2/pico-keys-sdk/mbedtls
+    email = pencelheimer@proton.me
+    name = pencelheimer
+    signingkey = /home/dumbnerd/.ssh/github-pencelheimer-id.pub

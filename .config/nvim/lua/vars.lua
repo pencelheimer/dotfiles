@@ -94,6 +94,7 @@ vim.filetype.add {
     ['.*/kitty/*.conf'] = 'bash',
     ['.*/hypr/.*%.conf'] = 'hyprlang',
     ['.*tmux.conf'] = 'tmux',
+    ['.*allowed_signers'] = 'sshdconfig',
   },
 }
 
