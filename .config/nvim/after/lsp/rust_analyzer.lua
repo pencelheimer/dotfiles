@@ -17,9 +17,9 @@ return {
           '-Wclippy::suspicious', -- code that is most likely wrong or useless
           '-Wclippy::style', -- code that should be written in a more idiomatic way
           '-Wclippy::perf', -- code that can be written to run faster
-          '-Wclippy::pedantic', -- lints which are rather strict or have occasional false positives
           '-Wclippy::nursery', -- new lints that are still under development
-          '-Wclippy::cargo', -- lints for the cargo manifest
+          -- '-Wclippy::pedantic', -- lints which are rather strict or have occasional false positives
+          -- '-Wclippy::cargo', -- lints for the cargo manifest
           -- '-Aclippy::restriction',    -- lints which prevent the use of language and library features
           -- '-Aclippy::must_use_candidate', -- must_use is rather annoying
         },

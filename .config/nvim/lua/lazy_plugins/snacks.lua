@@ -49,7 +49,7 @@ local M = {
       refresh = 50,
     },
     image = {
-      enabled = true,
+      enabled = false,
       doc = {
         inline = false,
         float = true,
@@ -61,8 +61,8 @@ local M = {
         border = 'single',
         row = 0,
         col = -1,
-      }
-    }
+      },
+    },
   },
 }
 

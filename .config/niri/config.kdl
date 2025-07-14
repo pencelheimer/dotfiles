@@ -17,10 +17,15 @@ environment {
 
     DISPLAY ":0"
     ELECTRON_OZONE_PLATFORM_HINT "auto"
+
+    FREETYPE_PROPERTIES r#"
+        cff:no-stem-darkening=0
+        type1:no-stem-darkening=0
+        t1cid:no-stem-darkening=0
+    "#
 }
 
 cursor {
-    // xcursor-theme "breeze_cursors"
     xcursor-theme "Bibata-Modern-Ice"
     xcursor-size 24
     hide-after-inactive-ms 1000
@@ -233,6 +238,12 @@ layer-rule {
     block-out-from "screencast"
 }
 
+layer-rule {
+    match namespace="^test$"
+
+    place-within-backdrop true
+}
+
 workspace "terminal" {
     open-on-output "eDP-1"
 }
@@ -309,19 +320,22 @@ window-rule {
 }
 
 window-rule {
+    match app-id="^steam$"
+    open-on-workspace "games"
+}
+
+window-rule {
     match app-id="^steam$" title="^Special Offers$"
     open-floating true
     open-maximized false
     min-width  460
     min-height 800
-    open-on-workspace "games"
 }
 
 window-rule {
     match app-id="^steam$" title="^Friends List$"
     default-column-width { fixed 340; }
     open-maximized false
-    open-on-workspace "games"
 }
 
 window-rule {
@@ -421,7 +435,7 @@ binds {
     Shift+Print { screenshot-window; }
     Mod+Shift+E { spawn "bash" "-c" r#"wl-paste | satty -f -"#; }
 
-    Mod+Z       hotkey-overlay-title="Spawn Screen Recorder" { spawn  "gsr-ui" "launch-show"; }
+    Mod+Z       hotkey-overlay-title="Spawn Screen Recorder" { spawn  "bash" "-c" r#"gsr-ui launch-show"#; }
     ALT+F9      { spawn "gsr-ui-cli" "toggle-record"; }
 
     Mod+V hotkey-overlay-title="Spawn Clipboard manager" { spawn "bash" "-c" r#"rofi -modi clipboard:~/.scripts/rofi-cliphist.sh -show clipboard -show-icons"#; }

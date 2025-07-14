@@ -5,6 +5,7 @@
     "spacing": 4, // Gaps between modules (4px)
     "output": [
         "eDP-1",
+        "eDP-2",
         "HDMI-A-2",
         "DP-3",
         "DP-5"

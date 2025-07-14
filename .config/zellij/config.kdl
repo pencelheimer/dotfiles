@@ -92,7 +92,7 @@ keybinds clear-defaults=true {
         bind "z" { ToggleFocusFullscreen; SwitchToMode "locked"; }
 
         bind "f" {
-            Run "/home/dumbnerd/.scripts/mux_sessionizer.rb" "zellij" {
+            Run "/home/dumbnerd/.config/zellij/scripts/sessionizer" "zellij" {
             // Run "/home/dumbnerd/.config/zellij/scripts/sessionizer" "zellij" {
                 floating true;
                 close_on_exit true;

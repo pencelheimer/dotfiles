@@ -6,4 +6,7 @@ README.md
 credentials.zsh
 Pictures/Screenshots
 .config/hypr_bak
-.config/waybar.bak
+.config/waybar.baktodos
+.ssh/*
+!.ssh/config
+!.ssh/known_hosts

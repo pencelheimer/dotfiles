@@ -82,17 +82,8 @@ end
 # end
 
 function cd
-    # Assuming you have a "z" command available in Fish (or an equivalent)
     z $argv
 end
-
-# function cp
-#     advcp -g $argv
-# end
-
-# function mv
-#     advmv -g $argv
-# end
 
 function rm
     trash $argv
@@ -161,7 +152,32 @@ function tmux_attach
     end
 end
 
+function create_wifi_hotspot
+    set -l ifname $argv[1]
+    set -l con_name $argv[2]
+    set -l passwd $argv[3]
+    set -l band "a" # 'a' for 5GHz, 'bg' for 2.4GHz (default usually)
+
+    if test -z "$ifname" || test -z "$con_name" || test -z "$passwd"
+        echo "Usage: create_wifi_hotspot <interface_name> <connection_name> <password>"
+        return 1
+    end
+
+    echo "Creating Wi-Fi hotspot '$con_name' on interface '$ifname' in 5GHz band..."
+
+    nmcli c add type wifi ifname $ifname con-name $con_name autoconnect yes ssid $con_name \
+           802-11-wireless.mode ap \
+           802-11-wireless.band $band \
+           ipv4.method shared \
+           wifi-sec.key-mgmt wpa-psk \
+           wifi-sec.psk "$passwd"
+
+    echo "Hotspot creation command executed. Check 'nmcli connection show' to verify."
+    echo "Also, verify your Wi-Fi adapter supports 5GHz AP mode using: nmcli -f WIFI-PROPERTIES.AP device show $ifname"
+end
+
 alias ta='tmux_attach'
+alias ze='zellij'
 
 ### Shell Integrations
 

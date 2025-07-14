@@ -7,6 +7,12 @@ vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
   {
+    dir = '~/stuff/projects/imp.nvim',
+    name = 'imp',
+    opts = {},
+  },
+
+  {
     'scottmckendry/cyberdream.nvim',
     lazy = false,
     priority = 1000,

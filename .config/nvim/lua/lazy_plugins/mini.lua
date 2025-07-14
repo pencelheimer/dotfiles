@@ -1,8 +1,8 @@
 local M = {
-  { 'echasnovski/mini.ai',       opts = { n_lines = 500 }, event = 'BufEnter' },
-  { 'echasnovski/mini.surround', opts = {},                event = 'BufEnter' },
-  { 'echasnovski/mini.comment',  opts = {},                event = 'BufEnter' },
-  { 'echasnovski/mini.move',     opts = {},                event = 'BufEnter' },
+  { 'echasnovski/mini.ai', opts = { n_lines = 500 }, event = 'BufEnter' },
+  { 'echasnovski/mini.surround', opts = {}, event = 'BufEnter' },
+  { 'echasnovski/mini.comment', opts = {}, event = 'BufEnter' },
+  { 'echasnovski/mini.move', opts = {}, event = 'BufEnter' },
   {
     'echasnovski/mini.diff',
     opts = {},
@@ -11,25 +11,25 @@ local M = {
         pattern = 'MiniDiffUpdated',
         callback = function(data)
           local summary = vim.b[data.buf].minidiff_summary or {}
-          local str = ""
+          local str = ''
           if summary.add ~= nil and summary.add > 0 then
-            str = str .. '%#MiniDiffSignAdd# ' .. summary.add .. "%#MiniStatuslineDevinfo#"
+            str = str .. '%#MiniDiffSignAdd# ' .. summary.add .. '%#MiniStatuslineDevinfo#'
           end
           if summary.change ~= nil and summary.change > 0 then
-            str = str .. ' %#MiniDiffSignChange# ' .. summary.change .. "%#MiniStatuslineDevinfo#"
+            str = str .. ' %#MiniDiffSignChange# ' .. summary.change .. '%#MiniStatuslineDevinfo#'
           end
           if summary.delete ~= nil and summary.delete > 0 then
-            str = str .. ' %#MiniDiffSignDelete# ' .. summary.delete .. "%#MiniStatuslineDevinfo#"
+            str = str .. ' %#MiniDiffSignDelete# ' .. summary.delete .. '%#MiniStatuslineDevinfo#'
           end
           vim.b[data.buf].minidiff_summary_string = str
-        end
+        end,
       })
     end,
-    event = 'BufEnter'
+    event = 'BufEnter',
   },
-  { 'echasnovski/mini.splitjoin',  opts = {}, event = 'BufEnter' },
+  { 'echasnovski/mini.splitjoin', opts = {}, event = 'BufEnter' },
   { 'echasnovski/mini.cursorword', opts = {}, event = 'BufEnter' },
-  { 'echasnovski/mini.icons',      opts = {}, event = 'VimEnter' },
+  { 'echasnovski/mini.icons', opts = {}, event = 'VimEnter' },
   {
     'echasnovski/mini.snippets',
     lazy = true,
@@ -42,6 +42,7 @@ local M = {
           minisnippets.gen_loader.from_lang(),
         },
       }
+      minisnippets.start_lsp_server {}
     end,
   },
   {
@@ -132,21 +133,21 @@ local M = {
   {
     'echasnovski/mini.pick',
     lazy = true,
-    dependencies = { { 'echasnovski/mini.extra', opts = {} }, },
+    dependencies = { { 'echasnovski/mini.extra', opts = {} } },
     keys = {
-      { 'gD',               vim.lsp.buf.declaration,                  'Goto declaration' },
-      { '<leader>ca',       vim.lsp.buf.code_action,                  'Code action' },
-      { 'gd',               ":Pick lsp scope='definition'<CR>",       desc = 'Goto definition' },
-      { 'gr',               ":Pick lsp scope='references'<CR>",       desc = 'Goto references' },
-      { 'gI',               ":Pick lsp scope='implementation'<CR>",   desc = 'Goto implementation' },
-      { '<leader>gt',       ":Pick lsp scope='type_definition' <CR>", desc = 'Goto type definition' },
-      { '<leader>sh',       ":Pick help<CR>",                         desc = 'Search Help' },
-      { '<leader>sf',       ":Pick files tool='rg'<CR>",              desc = 'Search Files' },
-      { '<leader>sg',       ":Pick grep_live<CR>",                    desc = 'Search by Grep' },
-      { '<leader>sr',       ":Pick resume<CR>",                       desc = 'Resume previous picker' },
-      { '<leader><leader>', ":Pick buffers<CR>",                      desc = 'Find existing buffers' },
-      { '<leader>/',        ":Pick buf_lines scope='current'<CR>",    desc = 'Fuzzily search in current buffer' },
-      { 'z=',               ":Pick spellsuggest<CR>",                 desc = 'Spell suggestions' },
+      { 'gD', vim.lsp.buf.declaration, 'Goto declaration' },
+      { '<leader>ca', vim.lsp.buf.code_action, 'Code action' },
+      { 'gd', ":Pick lsp scope='definition'<CR>", desc = 'Goto definition' },
+      { 'gr', ":Pick lsp scope='references'<CR>", desc = 'Goto references' },
+      { 'gI', ":Pick lsp scope='implementation'<CR>", desc = 'Goto implementation' },
+      { '<leader>gt', ":Pick lsp scope='type_definition' <CR>", desc = 'Goto type definition' },
+      { '<leader>sh', ':Pick help<CR>', desc = 'Search Help' },
+      { '<leader>sf', ":Pick files tool='rg'<CR>", desc = 'Search Files' },
+      { '<leader>sg', ':Pick grep_live<CR>', desc = 'Search by Grep' },
+      { '<leader>sr', ':Pick resume<CR>', desc = 'Resume previous picker' },
+      { '<leader><leader>', ':Pick buffers<CR>', desc = 'Find existing buffers' },
+      { '<leader>/', ":Pick buf_lines scope='current'<CR>", desc = 'Fuzzily search in current buffer' },
+      { 'z=', ':Pick spellsuggest<CR>', desc = 'Spell suggestions' },
     },
     config = function()
       local minipick = require 'mini.pick'
@@ -166,7 +167,7 @@ local M = {
               row = math.floor(0.5 * (vim.o.lines - height)),
               col = math.floor(0.5 * (vim.o.columns - width)),
             }
-          end
+          end,
         },
       }
     end,
@@ -176,54 +177,52 @@ local M = {
     config = function()
       require('mini.statusline').setup {
         content = {
-          active =
-              function()
-                local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 300 })
-                local git           = MiniStatusline.section_git({ trunc_width = 40 })
-                local diff          = MiniStatusline.section_diff({ trunc_width = 75, icon = " :" })
+          active = function()
+            local mode, mode_hl = MiniStatusline.section_mode { trunc_width = 300 }
+            local git = MiniStatusline.section_git { trunc_width = 40 }
+            local diff = MiniStatusline.section_diff { trunc_width = 75, icon = ' :' }
 
-                local lsp           = 'No Active LSP'
-                local clients       = vim.lsp.get_clients()
-                if next(clients) ~= nil then
-                  for _, client in ipairs(clients) do
-                    local filetypes = client.config.filetypes ---@diagnostic disable-line: undefined-field
-                    if filetypes and vim.fn.index(filetypes, vim.api.nvim_get_option_value('filetype', { buf = 0 })) ~= -1 then
-                      lsp = ' LSP: ' .. client.name
-                    end
-                  end
+            local lsp = 'No Active LSP'
+            local clients = vim.lsp.get_clients()
+            if next(clients) ~= nil then
+              for _, client in ipairs(clients) do
+                local filetypes = client.config.filetypes ---@diagnostic disable-line: undefined-field
+                if filetypes and vim.fn.index(filetypes, vim.api.nvim_get_option_value('filetype', { buf = 0 })) ~= -1 then
+                  lsp = ' LSP: ' .. client.name
                 end
-
-                local diagnostics = MiniStatusline.section_diagnostics({
-                  trunc_width = 75,
-                  icon = "",
-                  signs = {
-                    ERROR = '%#DiagnosticError#' .. ' ',
-                    WARN = '%#DiagnosticWarn#' .. ' ',
-                    INFO = '%#DiagnosticInfo#' .. '',
-                    HINT = '%#DiagnosticHint#' .. ' ',
-                  }
-                })
-
-                local filename    = MiniStatusline.section_filename({ trunc_width = 300 })
-                local fileinfo    = MiniStatusline.section_fileinfo({ trunc_width = 120 })
-                local location    = MiniStatusline.section_location({ trunc_width = 300 })
-                local search      = MiniStatusline.section_searchcount({ trunc_width = 75 })
-
-                return MiniStatusline.combine_groups({
-                  { hl = mode_hl,                  strings = { mode } },
-                  { hl = 'MiniStatuslineFilename', strings = { filename } },
-                  { hl = 'MiniStatuslineDevinfo',  strings = { git, lsp, diagnostics } },
-                  '%=',
-                  { hl = 'MiniStatuslineDevinfo',  strings = { diff } },
-                  { hl = 'MiniStatuslineFilename', strings = { fileinfo } },
-                  { hl = mode_hl,                  strings = { search, location } },
-                })
               end
-          ,
-        }
+            end
+
+            local diagnostics = MiniStatusline.section_diagnostics {
+              trunc_width = 75,
+              icon = '',
+              signs = {
+                ERROR = '%#DiagnosticError#' .. ' ',
+                WARN = '%#DiagnosticWarn#' .. ' ',
+                INFO = '%#DiagnosticInfo#' .. '',
+                HINT = '%#DiagnosticHint#' .. ' ',
+              },
+            }
+
+            local filename = MiniStatusline.section_filename { trunc_width = 300 }
+            local fileinfo = MiniStatusline.section_fileinfo { trunc_width = 120 }
+            local location = MiniStatusline.section_location { trunc_width = 300 }
+            local search = MiniStatusline.section_searchcount { trunc_width = 75 }
+
+            return MiniStatusline.combine_groups {
+              { hl = mode_hl, strings = { mode } },
+              { hl = 'MiniStatuslineFilename', strings = { filename } },
+              { hl = 'MiniStatuslineDevinfo', strings = { git, lsp, diagnostics } },
+              '%=',
+              { hl = 'MiniStatuslineDevinfo', strings = { diff } },
+              { hl = 'MiniStatuslineFilename', strings = { fileinfo } },
+              { hl = mode_hl, strings = { search, location } },
+            }
+          end,
+        },
       }
     end,
-  }
+  },
 }
 
 return M
