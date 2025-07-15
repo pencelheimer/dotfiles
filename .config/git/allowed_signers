@@ -1,10 +1,7 @@
 # man ssh-keygen > ALLOWED SIGNERS
 
-# my key
+# me
 * ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPk07NI4WUJ+teJ02OF5t4FFLdfg4E1PmaZb76MA+LtY
 
-# kavusia
 unexplrd@linerds.us ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILD1xhF6SYtgb/UacOR2HYcrPJhWgxRlwiXnp3EgYZGs
-
-# oxidate
-oxidate@tuta.io ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDQD3dR4p5K4gChrSEK+TktPae6i4lmg5vhtqPNGAvgD
+oxidate@tuta.io     ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDQD3dR4p5K4gChrSEK+TktPae6i4lmg5vhtqPNGAvgD
