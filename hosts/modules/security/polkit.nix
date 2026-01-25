@@ -1,9 +1,21 @@
-{...}: {
+{pkgs, ...}: {
   config = {
-    security = {
-      # TODO: move soteria from here?
-      soteria.enable = true; # gtk polkit agent in rust
+    # TODO: move polkit agent from here?
+    systemd.user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = ["graphical-session.target"];
+      wants = ["graphical-session.target"];
+      after = ["graphical-session.target"];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
 
+    security = {
       pam.sshAgentAuth.enable = true;
 
       polkit = {
