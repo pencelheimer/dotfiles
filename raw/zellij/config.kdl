@@ -1,0 +1,274 @@
+simplified_ui true
+pane_frames true
+
+default_mode "locked"
+default_shell "fish"
+
+// layout_dir "/tmp"
+// default_layout "compact"
+// default_layout "default"
+
+// theme_dir "/tmp"
+// theme "dracula"
+// styled_underlines false
+// stacked_resize false
+
+// copy_command "wl-copy"
+copy_on_select true
+
+mouse_mode true
+// support_kitty_keyboard_protocol false
+// auto_layout false
+
+session_name "default"
+attach_to_session true
+// session_serialization true
+// serialize_pane_viewport false
+// scrollback_lines_to_serialize 10000
+// serialization_interval 10000
+// disable_session_metadata false
+
+// show_startup_tips false
+// show_release_notes false
+
+// Plugin aliases - can be used to change the implementation of Zellij
+// changing these requires a restart to take effect
+plugins {
+    plugin-manager location="zellij:plugin-manager"
+    about location="zellij:about"
+    configuration location="zellij:configuration"
+    session-manager location="zellij:session-manager"
+    status-bar location="zellij:status-bar"
+    tab-bar location="zellij:tab-bar"
+    welcome-screen location="zellij:session-manager" { welcome_screen true; }
+
+    // compact-bar location="zellij:compact-bar" {
+    //   tooltip "Ctrl F1"
+    // }
+
+    switch location="https://github.com/mostafaqanbaryan/zellij-switch/releases/download/0.2.1/zellij-switch.wasm"
+
+    zjstatus location="https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm"
+    zjstatus-hints location="https://github.com/b0o/zjstatus-hints/releases/latest/download/zjstatus-hints.wasm" {
+        max_length 100
+        overflow_str "..."
+        pipe_name "zjstatus_hints"
+        hide_in_base_mode false
+    }
+}
+
+load_plugins {
+    zjstatus-hints
+}
+
+keybinds clear-defaults=true {
+    shared {
+        bind "Ctrl C" { Copy; }
+        // bind "Ctrl V" { Paste; }
+    }
+    locked {
+        bind "Ctrl b" { SwitchToMode "normal"; }
+    }
+    shared_except "locked" "renametab" "renamepane" {
+        bind "Ctrl b" { SwitchToMode "locked"; }
+        bind "Ctrl q" { Quit; }
+    }
+    normal {
+        bind "1" { GoToTab 1; SwitchToMode "locked"; }
+        bind "2" { GoToTab 2; SwitchToMode "locked"; }
+        bind "3" { GoToTab 3; SwitchToMode "locked"; }
+        bind "4" { GoToTab 4; SwitchToMode "locked"; }
+        bind "5" { GoToTab 5; SwitchToMode "locked"; }
+        bind "6" { GoToTab 6; SwitchToMode "locked"; }
+        bind "7" { GoToTab 7; SwitchToMode "locked"; }
+        bind "8" { GoToTab 8; SwitchToMode "locked"; }
+        bind "9" { GoToTab 9; SwitchToMode "locked"; }
+
+        bind "v" { NewPane "down"; SwitchToMode "locked"; }
+        bind "h" { NewPane "right"; SwitchToMode "locked"; }
+
+        bind "b" { BreakPane; SwitchToMode "locked"; }
+        bind "c" { NewTab { name ""; }; SwitchToMode "locked"; }
+
+        bind "x" { CloseFocus; SwitchToMode "locked"; }
+
+        bind "z" { ToggleFocusFullscreen; SwitchToMode "locked"; }
+
+        bind "f" {
+            Run "sessionizer" {
+                floating true;
+                close_on_exit true;
+                name "Sessionizer";
+            };
+            SwitchToMode "locked";
+        }
+    }
+    pane {
+        bind "v" { NewPane "down"; SwitchToMode "locked"; }
+        bind "h" { NewPane "right"; SwitchToMode "locked"; }
+        bind "n" { NewPane; SwitchToMode "locked"; }
+
+        bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "locked"; }
+        bind "p" { TogglePanePinned; SwitchToMode "locked"; }
+        bind "z" { ToggleFocusFullscreen; SwitchToMode "locked"; }
+        bind "b" { TogglePaneFrames; SwitchToMode "locked"; }
+        bind "f" { ToggleFloatingPanes; SwitchToMode "locked"; }
+
+        bind "r" { SwitchToMode "renamepane"; PaneNameInput 0; }
+        bind "x" { CloseFocus; SwitchToMode "locked"; }
+    }
+    tab {
+        bind "h" { GoToPreviousTab; }
+        bind "l" { GoToNextTab; }
+
+        bind "b" { BreakPane; SwitchToMode "locked"; }
+        bind "n" { NewTab { name ""; }; SwitchToMode "locked"; }
+
+        bind "r" { SwitchToMode "renametab"; TabNameInput 0; }
+        bind "x" { CloseTab; SwitchToMode "locked"; }
+    }
+    resize {
+        bind "h" { Resize "Increase left"; }
+        bind "j" { Resize "Increase down"; }
+        bind "k" { Resize "Increase up"; }
+        bind "l" { Resize "Increase right"; }
+
+        bind "Alt h" { Resize "Decrease left"; }
+        bind "Alt j" { Resize "Decrease down"; }
+        bind "Alt k" { Resize "Decrease up"; }
+        bind "Alt l" { Resize "Decrease right"; }
+    }
+    move {
+        bind "h" { MovePane "left"; }
+        bind "j" { MovePane "down"; }
+        bind "k" { MovePane "up"; }
+        bind "l" { MovePane "right"; }
+    }
+    scroll {
+        bind "e" { EditScrollback; SwitchToMode "locked"; }
+        bind "f" { SwitchToMode "entersearch"; SearchInput 0; }
+    }
+    search {
+        bind "c" { SearchToggleOption "CaseSensitivity"; }
+        bind "o" { SearchToggleOption "WholeWord"; }
+        bind "w" { SearchToggleOption "Wrap"; }
+        bind "n" { Search "down"; }
+        bind "N" { Search "up"; }
+    }
+    session {
+        bind "d" { Detach; }
+        bind "p" {
+            LaunchOrFocusPlugin "plugin-manager" {
+                floating true
+                move_to_focused_tab true
+            }
+            SwitchToMode "locked"
+        }
+        bind "w" {
+            LaunchOrFocusPlugin "session-manager" {
+                floating true
+                move_to_focused_tab true
+            }
+            SwitchToMode "locked"
+        }
+    }
+    shared_among "normal" "locked" {
+        bind "Ctrl h" {
+            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+                name "move_focus_or_tab";
+                payload "left";
+
+                // Plugin Configuration
+                move_mod "ctrl"; // Optional, should be added on every command if you want to use it
+            };
+        }
+
+        bind "Ctrl j" {
+            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "down";
+
+                move_mod "ctrl";
+            };
+        }
+
+        bind "Ctrl k" {
+            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+                name "move_focus";
+                payload "up";
+
+                move_mod "ctrl";
+            };
+        }
+
+        bind "Ctrl l" {
+            MessagePlugin "https://github.com/hiasr/vim-zellij-navigator/releases/download/0.2.1/vim-zellij-navigator.wasm" {
+                name "move_focus_or_tab";
+                payload "right";
+
+                move_mod "ctrl";
+            };
+        }
+
+        bind "Alt =" "Alt +" { Resize "Increase"; }
+        bind "Alt -" { Resize "Decrease"; }
+
+        bind "Alt [" { PreviousSwapLayout; }
+        bind "Alt ]" { NextSwapLayout; }
+        bind "Alt f" { ToggleFloatingPanes; }
+        bind "Alt n" { NewPane; }
+
+        bind "Alt i" { MoveTab "left"; }
+        bind "Alt o" { MoveTab "right"; }
+    }
+    shared_except "locked" {
+    }
+
+    entersearch {
+        bind "Ctrl c" { SwitchToMode "scroll"; }
+        bind "esc" { SwitchToMode "scroll"; }
+        bind "enter" { SwitchToMode "search"; }
+    }
+    shared_among "scroll" "search" {
+        bind "Ctrl c" { ScrollToBottom; SwitchToMode "locked"; }
+
+        bind "PageDown" { PageScrollDown; }
+        bind "PageUp" { PageScrollUp; }
+        bind "Ctrl d" { HalfPageScrollDown; }
+        bind "Ctrl u" { HalfPageScrollUp; }
+
+        bind "j" { ScrollDown; }
+        bind "k" { ScrollUp; }
+    }
+    renametab {
+        bind "esc" { UndoRenameTab; SwitchToMode "tab"; }
+    }
+    renamepane {
+        bind "esc" { UndoRenamePane; SwitchToMode "pane"; }
+    }
+    shared_among "renametab" "renamepane" {
+        bind "enter" "Ctrl c" { SwitchToMode "locked"; }
+    }
+
+    shared_except "locked" "entersearch" "renametab" "renamepane" {
+        bind "esc" { SwitchToMode "locked"; }
+    }
+    shared_except "locked" "entersearch" "renametab" "renamepane" "move" {
+        bind "m" { SwitchToMode "move"; }
+    }
+    shared_except "locked" "entersearch" "search" "renametab" "renamepane" "session" {
+        bind "o" { SwitchToMode "session"; }
+    }
+    shared_except "locked" "tab" "entersearch" "renametab" "renamepane" {
+        bind "t" { SwitchToMode "tab"; }
+    }
+    shared_except "locked" "tab" "scroll" "entersearch" "renametab" "renamepane" {
+        bind "s" { SwitchToMode "scroll"; }
+    }
+    shared_among "normal" "resize" "tab" "scroll" "prompt" "tmux" {
+        bind "p" { SwitchToMode "pane"; }
+    }
+    shared_except "locked" "resize" "pane" "tab" "entersearch" "renametab" "renamepane" {
+        bind "r" { SwitchToMode "resize"; }
+    }
+}

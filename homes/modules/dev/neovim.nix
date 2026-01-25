@@ -1,0 +1,70 @@
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
+  options.dev.neovim = {
+    enable = lib.mkEnableOption "neovim";
+  };
+
+  config = lib.mkIf config.dev.neovim.enable {
+    stylix.targets.neovim.enable = false;
+
+    home.file.".config/nvim" = {
+      recursive = true;
+      source = config.lib.file.mkOutOfStoreSymlink "/home/pencelheimer/.config/nixos/raw/nvim";
+    };
+
+    home.sessionVariables = {
+      "MANPAGER" = "nvim +Man!";
+      "CODELLDB_PATH" = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/adapter/codelldb";
+      "LIBLLDB_PATH" = "${pkgs.vscode-extensions.vadimcn.vscode-lldb}/share/vscode/extensions/vadimcn.vscode-lldb/lldb/lib/liblldb.so";
+    };
+
+    programs.neovim = {
+      enable = true;
+      withRuby = false;
+      defaultEditor = true;
+
+      extraPackages = with pkgs; [
+        # lsps
+        bash-language-server
+        clang-tools
+        emmet-language-server
+        vscode-json-languageserver
+        gopls
+        hyprls
+        lua-language-server
+        nixd
+        nil
+        pyright
+        taplo
+        tinymist
+        gopls
+        just-lsp
+        rust-analyzer
+        postgres-language-server
+        jdt-language-server
+
+        # formatters
+        alejandra
+        black
+        rustfmt
+
+        # linters
+        clippy
+
+        # debuggers
+        delve
+        lldb
+
+        # other
+        gcc # needed for TreeSitter grammars
+        rustc # needed for rust-analyzer std hints
+        glibc # needed for lldb
+        nodejs # needed for makrdown preview plugin
+      ];
+    };
+  };
+}

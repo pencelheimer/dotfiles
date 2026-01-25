@@ -1,0 +1,88 @@
+local M = {
+  'folke/snacks.nvim',
+  priority = 1000,
+  lazy = false,
+  keys = {
+    {
+      "<leader>gg",
+      function() Snacks.lazygit() end,
+      desc = "Lazygit"
+    },
+
+    {
+      "<leader>gl",
+      function() Snacks.lazygit.log_file() end,
+      desc = "Lazygit Current File History"
+    },
+
+    {
+      "<leader>gL",
+      function() Snacks.lazygit.log() end,
+      desc = "Lazygit Log (Repo)"
+    },
+  },
+  ---@module 'snacks'
+  ---@type snacks.Config
+  opts = {
+    bigfile = { enabled = true },
+    quickfile = { enabled = true },
+    indent = {
+      animate = {
+        enabled = vim.fn.has 'nvim-0.10' == 1,
+        style = 'out',
+        easing = 'linear',
+        duration = {
+          step = 20,
+          total = 200,
+        },
+      },
+      scope = {
+        enabled = true,
+        priority = 200,
+        char = '│',
+        underline = true,
+        only_current = false,
+        hl = {
+          'SnacksIndent1',
+          'SnacksIndent2',
+          'SnacksIndent3',
+          'SnacksIndent4',
+          'SnacksIndent5',
+          'SnacksIndent6',
+          'SnacksIndent7',
+          'SnacksIndent8',
+        },
+      },
+      filter = function(buf)
+        return vim.g.snacks_indent ~= false and vim.b[buf].snacks_indent ~= false and vim.bo[buf].buftype == ''
+      end,
+    },
+    statuscolumn = {
+      enabled = true,
+      left = { 'mark', 'sign' },
+      right = { 'fold' },
+      folds = {
+        open = true,
+        git_hl = true,
+      },
+      refresh = 50,
+    },
+    image = {
+      enabled = false,
+      doc = {
+        inline = false,
+        float = true,
+      },
+    },
+    styles = {
+      snacks_image = {
+        relative = 'editor',
+        border = 'single',
+        row = 0,
+        col = -1,
+      },
+    },
+  },
+}
+
+return M
