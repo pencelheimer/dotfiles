@@ -23,8 +23,6 @@
   # environment.sessionVariables.SSH_AUTH_SOCK = "$HOME/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock";
   environment.sessionVariables.SSH_AUTH_SOCK = "$HOME/.bitwarden-ssh-agent.sock";
 
-  services.tailscale.enable = true;
-
   # nix search nixpkgs ...
   environment.systemPackages = with pkgs; [
     wget
