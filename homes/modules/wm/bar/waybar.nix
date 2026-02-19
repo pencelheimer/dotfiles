@@ -286,42 +286,6 @@
           @define-color base05 ${colors.base05}; @define-color base0D ${colors.base0D};
           @define-color base06 ${colors.base06}; @define-color base0E ${colors.base0E};
           @define-color base07 ${colors.base07}; @define-color base0F ${colors.base0F};
-          /* Foreground Colors */
-          @define-color fg #e4e4e4;
-          @define-color fg-plus-1 #f4f4ff;
-          @define-color fg-plus-2 #f5f5f5;
-
-          /* Basic Colors */
-          @define-color white #ffffff;
-          @define-color black #000000;
-
-          /* Background Colors */
-          @define-color bg-minus-1 #101010;
-          /* @define-color bg #181818; */
-          @define-color bg rgba(24, 24, 24, 0.5);
-          @define-color bg-plus-1 #282828;
-          @define-color bg-plus-2 #453d41;
-          @define-color bg-plus-3 #484848;
-          @define-color bg-plus-4 #52494e;
-
-          /* Red Shades */
-          @define-color red-minus-1 #c73c3f;
-          @define-color red #f43841;
-          @define-color red-plus-1 #ff4f58;
-
-          /* Other Colors */
-          @define-color green #73d936;
-          @define-color yellow #ffdd33;
-          @define-color brown #cc8c3c;
-          @define-color quartz #95a99f;
-
-          /* Niagara Colors */
-          @define-color niagara-minus-2 #303540;
-          @define-color niagara-minus-1 #565f73;
-          @define-color niagara #96a6c8;
-
-          /* Additional Colors */
-          @define-color wisteria #9e95c7;
 
           * {
               transition: none;
