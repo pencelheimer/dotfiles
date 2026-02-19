@@ -12,7 +12,6 @@ local M = {
         'jdtls',
         'gopls',
         'clangd',
-        -- 'ccls',
         'tinymist',
         'pyright',
         'bashls',
@@ -24,7 +23,6 @@ local M = {
         'just',
         'postgres_lsp',
         'jdtls',
-        'harper_ls'
       })
     end,
   }
