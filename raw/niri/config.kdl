@@ -82,7 +82,8 @@ output "Chimei Innolux Corporation 0x14C9 Unknown" {
     mode "1920x1080@60"
     scale 1
     transform "normal"
-    position x=0 y=1080
+    // position x=0 y=1080
+    position x=1920 y=0
 }
 
 // Integrated Legion
@@ -264,6 +265,18 @@ window-rule {
     geometry-corner-radius 2
     clip-to-geometry true
     draw-border-with-background false
+}
+
+window-rule {
+    match app-id=r#"org.pulseaudio.pavucontrol"#
+
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"org.kde.kdeconnect.handler"#
+
+    open-floating true
 }
 
 window-rule {
