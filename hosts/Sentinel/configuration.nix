@@ -36,7 +36,7 @@
 
     xwayland-satellite
 
-    wineWowPackages.stableFull
+    wineWowPackages.stable
 
     (lib.hiPrio pkgs.uutils-coreutils-noprefix)
     (lib.hiPrio pkgs.uutils-findutils)
