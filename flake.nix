@@ -35,7 +35,6 @@
 
     yazi = {
       url = "github:sxyazi/yazi";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     elephant = {
