@@ -1,4 +1,8 @@
-{...}: {
-  services.ollama.enable = false;
+{...}:  {
+  services.ollama = {
+    enable = true;
+    port = 11434;
+  };
+
   services.open-webui.enable = false;
 }
