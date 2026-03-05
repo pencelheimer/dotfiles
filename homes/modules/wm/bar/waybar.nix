@@ -150,7 +150,7 @@
           };
         };
         mpris = {
-          interval = 0.5;
+          interval = 1;
           format = "{status_icon} 󰽴 {dynamic}";
           status-icons = {
             paused = "⏸ >";
@@ -159,6 +159,7 @@
             "title"
           ];
           max-length = 25;
+          dynamic-len = 25;
         };
         "pulseaudio#output" = {
           format = "{icon} {volume}%";
