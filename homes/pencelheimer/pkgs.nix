@@ -63,8 +63,6 @@
 
     cloudflared
 
-    antigravity
-
     xh
 
     delve
@@ -72,7 +70,6 @@
     obsidian
 
     vial
-    harper
 
     opencode
 
