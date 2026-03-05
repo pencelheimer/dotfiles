@@ -65,6 +65,7 @@ require('lazy').setup(
       version = '1.*',
       opts = {},
     },
+
     {
       'abecodes/tabout.nvim',
       lazy = false,

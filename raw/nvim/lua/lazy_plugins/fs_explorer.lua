@@ -46,11 +46,11 @@ local M = {
         signcolumn = "yes:2",
       },
       float = {
-        padding = 4,
-        max_width = 0.75,
+        max_width = 0.9,
         winblend = 10,
       },
       keymaps = {
+        ['<C-c>'] = false,
         ['g?'] = { 'actions.show_help', mode = 'n' },
         ['<CR>'] = 'actions.select',
         ['<C-s>'] = { 'actions.select', opts = { vertical = true } },
