@@ -26,6 +26,7 @@
     };
     programs.zen-browser = {
       enable = true;
+      suppressXdgMigrationWarning = true;
 
       nativeMessagingHosts = [pkgs.firefoxpwa];
       languagePacks = ["uk" "en-US"];
@@ -89,7 +90,7 @@
 
         # http://kb.mozillazine.org/Category:Preferences
         settings = {
-          # "browser.search.defaultenginename" = "duckduckgo";
+          # "browser.search.defaultenginename" = "unduckified";
           "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
           "browser.newtabpage.activity-stream.improvesearch.handoffToAwesomebar" = false;
           "widget.use-xdg-desktop-portal.file-picker" = 1;
