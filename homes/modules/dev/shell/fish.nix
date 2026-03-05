@@ -22,7 +22,7 @@ in {
         ls = condEnable ext.use-eza "eza $argv";
         tree = condEnable ext.use-eza "eza --tree $argv";
         ta = condEnable tmux "tmux attach || tmux new -s default";
-        tf = condEnable tmux "tmux new-session -d && tmux send-keys 'C-b' f && tmux attach";
+        tf = "tmux new-session -d -s default 2>/dev/null; tmux attach-session -t default \; display-popup -E 'sesh'";
         open = condEnable ext.enable "handlr open $argv";
 
         __multidot = "echo -ns (string repeat -n (math (string length -- $argv) - 1) ../) %";
