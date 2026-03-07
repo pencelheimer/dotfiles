@@ -11,6 +11,7 @@
     ./tmux.nix
     ./direnv.nix
     ./ssh.nix
+    ./opencode.nix
 
     ./terminal
     ./shell
