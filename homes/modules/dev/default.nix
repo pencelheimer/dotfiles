@@ -31,6 +31,8 @@
       tmux.enable = lib.mkDefault true;
       direnv.enable = lib.mkDefault true;
 
+      opencode.enable = lib.mkDefault true;
+
       terminal.kitty.enable = true;
 
       shell.fish.enable = lib.mkDefault true;
