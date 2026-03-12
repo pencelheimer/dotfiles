@@ -75,7 +75,7 @@
 
           # sesh nure
           unbind u
-          bind u display-popup -E "sesh semester-5"
+          bind u display-popup -E "sesh semester-6"
         '';
     };
 
@@ -94,7 +94,7 @@
               "''$HOME/.config/nixos"
               "''$HOME/references"
               "''$HOME/Downloads"
-              "''$HOME/Documents/rustcamp_winter_2026"
+              "''$HOME/Documents/rustcamp"
             )
 
             DIRS=(
