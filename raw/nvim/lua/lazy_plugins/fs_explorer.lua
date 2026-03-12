@@ -17,7 +17,7 @@ local M = {
     --- @module 'oil'
     --- @type oil.Config
     opts = {
-      default_file_explorer = false,
+      default_file_explorer = true,
       delete_to_trash = true,
       skip_confirm_for_simple_edits = true,
       lsp_file_methods = {

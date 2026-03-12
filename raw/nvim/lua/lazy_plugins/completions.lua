@@ -6,7 +6,6 @@ local M = {
 
   dependencies = {
     'echasnovski/mini.snippets',
-    'mini.snippets',
   },
 
   ---@module 'blink.cmp'
@@ -36,19 +35,16 @@ local M = {
       default = { 'lsp', 'path', 'snippets', 'buffer' },
 
       providers = {
-        lsp = { score_offset = 100 },
+        lsp = {},
         snippets = {
           name = 'snippets',
           enabled = true,
           max_items = 15,
-          min_keyword_length = 3,
           module = 'blink.cmp.sources.snippets',
-          score_offset = 85,
         },
         path = {
           name = 'Path',
           module = 'blink.cmp.sources.path',
-          score_offset = 25,
           fallbacks = { 'snippets', 'buffer' },
           opts = {
             trailing_slash = false,
@@ -65,7 +61,6 @@ local M = {
           max_items = 3,
           module = 'blink.cmp.sources.buffer',
           min_keyword_length = 4,
-          score_offset = 15,
         },
       },
     },

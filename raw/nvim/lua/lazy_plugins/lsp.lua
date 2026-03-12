@@ -23,6 +23,7 @@ local M = {
         'just',
         'postgres_lsp',
         'jdtls',
+        'protols',
       })
     end,
   }

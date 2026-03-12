@@ -46,6 +46,7 @@
         rust-analyzer
         postgres-language-server
         jdt-language-server
+        protols
 
         # formatters
         alejandra
