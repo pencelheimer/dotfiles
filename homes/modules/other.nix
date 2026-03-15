@@ -154,6 +154,11 @@
           name = "flathub";
           location = "https://dl.flathub.org/repo/flathub.flatpakrepo";
         }
+
+        {
+          name = "GFNLinux";
+          location = "https://international.download.nvidia.com/GFNLinux/flatpak/geforcenow.flatpakrepo";
+        }
       ];
       packages = [
         "com.github.tchx84.Flatseal"
@@ -161,6 +166,10 @@
         "it.mijorus.gearlever"
         "io.github.kolunmi.Bazaar"
         "com.collaboraoffice.Office"
+        {
+          appId = "com.nvidia.geforcenow";
+          origin = "GFNLinux";
+        }
       ];
       overrides = {
         global = {
@@ -210,6 +219,14 @@
         "io.github.kolunmi.Bazaar" = {
           Context.filesystems = ["xdg-data/flatpak"];
         };
+
+        "com.nvidia.geforcenow" = {
+          Context = {
+            sockets = ["wayland" "x11" "pulseaudio"];
+            devices = ["all"]; # gpu dri?
+            shared = ["ipc" "network"];
+          };
+        };
       };
     };
 
@@ -222,8 +239,8 @@
         image_viewer = ["org.gnome.Loupe.desktop"];
         pdf_reader = ["org.gnome.Papers.desktop"];
         video_player = ["mpv"];
-        # web_browser = ["zen-twilight"];
-        web_browser = ["helium"];
+        web_browser = ["zen-twilight"];
+        # web_browser = ["helium"];
       in {
         "application/pdf" = pdf_reader;
         "image/jpeg" = image_viewer;
