@@ -2,6 +2,7 @@
   config,
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   options.dev.neovim = {
@@ -27,6 +28,8 @@
       withRuby = false;
       defaultEditor = true;
 
+      package = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
+
       extraPackages = with pkgs; [
         # lsps
         bash-language-server
@@ -38,7 +41,7 @@
         lua-language-server
         nixd
         nil
-        pyright
+        basedpyright
         taplo
         tinymist
         gopls
@@ -47,6 +50,8 @@
         postgres-language-server
         jdt-language-server
         protols
+        typescript-language-server
+        lspmux
 
         # formatters
         alejandra
@@ -61,6 +66,7 @@
         lldb
 
         # other
+        tree-sitter # needed for TreeSitter grammars
         gcc # needed for TreeSitter grammars
         rustc # needed for rust-analyzer std hints
         glibc # needed for lldb

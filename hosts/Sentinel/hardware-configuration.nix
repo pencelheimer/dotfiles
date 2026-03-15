@@ -27,6 +27,12 @@
     options = ["fmask=0077" "dmask=0077"];
   };
 
+  fileSystems."/mnt/endeavouros" = {
+    device = "/dev/disk/by-uuid/2cae8000-3452-4414-bd38-36cc199b5515";
+    fsType = "ext4";
+    options = ["defaults" "nofail"];
+  };
+
   swapDevices = [];
 
   hardware.graphics = {

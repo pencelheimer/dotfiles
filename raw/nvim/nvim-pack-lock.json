@@ -1,0 +1,116 @@
+{
+  "plugins": {
+    "conform.nvim": {
+      "rev": "40dcec5555f960b0a04340d76eabdf4efe78599d",
+      "src": "https://github.com/stevearc/conform.nvim"
+    },
+    "crates.nvim": {
+      "rev": "ac9fa498a9edb96dc3056724ff69d5f40b898453",
+      "src": "https://github.com/saecki/crates.nvim"
+    },
+    "cyberdream.nvim": {
+      "rev": "a68ffa6af98bf1fc88f33a071c51a188ec85c725",
+      "src": "https://github.com/scottmckendry/cyberdream.nvim"
+    },
+    "fidget.nvim": {
+      "rev": "7fa433a83118a70fe24c1ce88d5f0bd3453c0970",
+      "src": "https://github.com/j-hui/fidget.nvim"
+    },
+    "foldtext.nvim": {
+      "rev": "97c3fbdfca2ee37d4a8254e1d088c7f6b9d13578",
+      "src": "https://github.com/OXY2DEV/foldtext.nvim"
+    },
+    "friendly-snippets": {
+      "rev": "6cd7280adead7f586db6fccbd15d2cac7e2188b9",
+      "src": "https://github.com/rafamadriz/friendly-snippets"
+    },
+    "increment-activator": {
+      "rev": "b49fc24094f93aa29a7592034b97095b709c3528",
+      "src": "https://github.com/nishigori/increment-activator"
+    },
+    "kanagawa.nvim": {
+      "rev": "aef7f5cec0a40dbe7f3304214850c472e2264b10",
+      "src": "https://github.com/rebelot/kanagawa.nvim"
+    },
+    "mini.nvim": {
+      "rev": "cad365c212fb1e332cb93fa8f72697125799d00a",
+      "src": "https://github.com/nvim-mini/mini.nvim"
+    },
+    "moonfly": {
+      "rev": "d11b3d04cc1cb71a778d67a4df73283a5a6d66f4",
+      "src": "https://github.com/bluz71/vim-moonfly-colors"
+    },
+    "nvim-autopairs": {
+      "rev": "59bce2eef357189c3305e25bc6dd2d138c1683f5",
+      "src": "https://github.com/windwp/nvim-autopairs"
+    },
+    "nvim-dap": {
+      "rev": "a9d8cb68ee7184111dc66156c4a2ebabfbe01bc5",
+      "src": "https://github.com/mfussenegger/nvim-dap"
+    },
+    "nvim-dap-go": {
+      "rev": "b4421153ead5d726603b02743ea40cf26a51ed5f",
+      "src": "https://github.com/leoluz/nvim-dap-go"
+    },
+    "nvim-dap-lldb": {
+      "rev": "9c795072554b3dbf738d0c9cb29d28d7f820b2b4",
+      "src": "https://github.com/julianolf/nvim-dap-lldb"
+    },
+    "nvim-dap-view": {
+      "rev": "cd14d34150b05d633610ff8d39d6934110696923",
+      "src": "https://github.com/igorlfs/nvim-dap-view"
+    },
+    "nvim-lspconfig": {
+      "rev": "2163c54bb6cfec53e3e555665ada945b8c8331b9",
+      "src": "https://github.com/neovim/nvim-lspconfig"
+    },
+    "nvim-treesitter": {
+      "rev": "5cb05e1b0fa3c469958a2b26f36b3fe930af221c",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+    },
+    "nvim-treesitter-textobjects": {
+      "rev": "4e91b5d0394329a229725b021a8ea217099826ef",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+    },
+    "onedark.nvim": {
+      "rev": "213c23ae45a04797572242568d5d51937181792d",
+      "src": "https://github.com/navarasu/onedark.nvim"
+    },
+    "outline.nvim": {
+      "rev": "ead1820d49c8e79ce89cab1c2c318981b695c9d2",
+      "src": "https://github.com/hedyhli/outline.nvim"
+    },
+    "pgsql.vim": {
+      "rev": "16584d7a1f2c528560a646a63625c6731a72c8c7",
+      "src": "https://github.com/lifepillar/pgsql.vim"
+    },
+    "rustaceanvim": {
+      "rev": "f2f0c1231a5b019dbc1fd6dafac1751c878925a3",
+      "src": "https://github.com/mrcjkb/rustaceanvim"
+    },
+    "snacks.nvim": {
+      "rev": "a049339328e2599ad6e85a69fa034ac501e921b2",
+      "src": "https://github.com/folke/snacks.nvim"
+    },
+    "tabout.nvim": {
+      "rev": "9a3499480a8e53dcaa665e2836f287e3b7764009",
+      "src": "https://github.com/abecodes/tabout.nvim"
+    },
+    "treesitter-modules.nvim": {
+      "rev": "0cc09da40061051b0186479203faa75052cddab6",
+      "src": "https://github.com/MeanderingProgrammer/treesitter-modules.nvim"
+    },
+    "ts-install.nvim": {
+      "rev": "7c5569256212d17041d5f3057e5fcbaf646f6643",
+      "src": "https://github.com/lewis6991/ts-install.nvim"
+    },
+    "vim-abolish": {
+      "rev": "dcbfe065297d31823561ba787f51056c147aa682",
+      "src": "https://github.com/tpope/vim-abolish"
+    },
+    "vim-sleuth": {
+      "rev": "be69bff86754b1aa5adcbb527d7fcd1635a84080",
+      "src": "https://github.com/tpope/vim-sleuth"
+    }
+  }
+}
