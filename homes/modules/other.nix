@@ -161,7 +161,6 @@
         "it.mijorus.gearlever"
         "io.github.kolunmi.Bazaar"
         "com.collaboraoffice.Office"
-        # "com.valvesoftware.Steam"
       ];
       overrides = {
         global = {

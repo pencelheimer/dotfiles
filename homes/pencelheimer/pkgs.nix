@@ -1,4 +1,4 @@
-{pkgs, system, inputs, ...}: {
+{pkgs, inputs, ...}: {
   home.packages = with pkgs; [
     syshud
     (pkgs.syspower.overrideAttrs (oldAttrs: rec {
@@ -13,8 +13,6 @@
     }))
 
     materialgram
-
-    hypridle
 
     wl-mirror
 
@@ -36,6 +34,7 @@
 
     go
     air
+    delve
 
     dbmate
     pgcli
@@ -65,15 +64,17 @@
 
     xh
 
-    delve
-
     obsidian
 
     vial
 
     steam
+    gale
 
     inputs.helium.packages.x86_64-linux.default
+
+    bun
+    uv
   ];
 
   programs.vesktop.enable = true;
