@@ -19,6 +19,10 @@
             "qwen3:4b-instruct-2507-q4_K_M".name = "qwen3:4b-instruct";
           };
         };
+
+        plugin = [
+          "opencode-gemini-auth@latest"
+        ];
       };
     };
   };
