@@ -3,12 +3,14 @@ Config.now_if_args(function()
   local process_items = function(items, base)
     return MiniCompletion.default_process_items(items, base, process_items_opts)
   end
+
   require('mini.completion').setup({
     lsp_completion = {
       source_func = 'omnifunc',
-      auto_setup = false,
+      auto_setup = true,
       process_items = process_items,
     },
+    window = { signature = { width = 40 } }, -- NOTE(pencelheimer): this is not working
   })
 
   local on_attach = function(ev)
