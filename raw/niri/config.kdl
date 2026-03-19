@@ -148,6 +148,7 @@ output "HDMI-A-2" {
 layout {
     gaps 5
     center-focused-column "never"
+    always-center-single-column
 
     preset-column-widths {
         proportion 0.33333
@@ -159,7 +160,6 @@ layout {
     // preset-window-heights { }
 
     // If you leave the brackets empty, the windows themselves will decide their initial width.
-    // default-column-width {}
     default-column-width { proportion 0.5; }
 
     focus-ring { off; }
@@ -175,7 +175,7 @@ layout {
 
     tab-indicator {
         active-color "#FFDD33"
-        inactive-color "#AFAFD799"
+        inactive-color "#727272"
         urgent-color "#FF4F58"
 
         width 5
@@ -434,12 +434,13 @@ window-rule {
 
 binds {
     Mod+Shift+Slash  { show-hotkey-overlay; }
-    Mod+Shift+Escape { toggle-keyboard-shortcuts-inhibit; }
+    Ctrl+Alt+Delete allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    Mod+Escape { spawn "syspower"; }
+    Mod+Shift+Escape { quit; }
 
     Mod+Return hotkey-overlay-title="Spawn Terminal"    { spawn "kitty"; }
-    // Alt+Space  hotkey-overlay-title="Spawn App runner"  { spawn "rofi" "-show" "drun" "-show-icons" "-prompt"; }
     Alt+Space  hotkey-overlay-title="Spawn App runner"  { spawn-sh "nc -U /run/user/1000/walker/walker.sock"; }
-    Mod+Escape { spawn "syspower"; }
 
     Mod+U allow-when-locked=true hotkey-overlay-title="Toggle Lockscreen" { spawn-sh "killall -SIGUSR1 hyprlock || hyprlock"; }
 
@@ -558,6 +559,4 @@ binds {
     Mod+Equal       { set-column-width  "+1%"; }
     Mod+Shift+Minus { set-window-height "-1%"; }
     Mod+Shift+Equal { set-window-height "+1%"; }
-
-    Ctrl+Alt+Delete { quit; }
 }
