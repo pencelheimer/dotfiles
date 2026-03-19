@@ -23,7 +23,7 @@ Config.nmap('<C-f>', '<Cmd>lua require("conform").format()<CR>', 'Format')
 Config.xmap('<C-f>', '<Cmd>lua require("conform").format()<CR>', 'Format selection')
 
 -- Open file explorer
-Config.nmap('\\', '<Cmd>lua MiniFiles.open()<CR>', 'Directory')
+Config.nmap('\\', '<Cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>', 'Directory')
 
 -- Leader mappings ============================================================
 Config.leader_group_clues = {
@@ -83,6 +83,7 @@ Config.nmap_leader('f:', '<Cmd>Pick history scope=":"<CR>', '":" history')
 Config.nmap_leader('fa', '<Cmd>Pick git_hunks scope="staged"<CR>', 'Added hunks (all)')
 Config.nmap_leader('fA', pick_added_hunks_buf, 'Added hunks (buf)')
 Config.nmap_leader('fb', '<Cmd>Pick buffers<CR>', 'Buffers')
+Config.nmap_leader('<leader>', '<Cmd>Pick buffers<CR>', 'Buffers')
 Config.nmap_leader('fc', '<Cmd>Pick git_commits<CR>', 'Commits (all)')
 Config.nmap_leader('fC', '<Cmd>Pick git_commits path="%"<CR>', 'Commits (buf)')
 Config.nmap_leader('fd', '<Cmd>Pick diagnostic scope="all"<CR>', 'Diagnostic workspace')
