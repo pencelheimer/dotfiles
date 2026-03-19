@@ -31,6 +31,7 @@
 
     path = [
       pkgs.rust-analyzer
+      pkgs.clippy
       pkgs.cargo
       pkgs.rustc
       pkgs.coreutils
