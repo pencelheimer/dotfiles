@@ -15,7 +15,7 @@ Config.now_if_args(function()
   end
   Config.new_autocmd('User', 'MiniFilesExplorerOpen', add_marks, 'Add bookmarks')
 
--- Mappings for splits ===========================================================
+  -- Mappings for splits ===========================================================
 
   local map_split = function(buf_id, lhs, direction)
     local rhs = function()
@@ -44,7 +44,7 @@ Config.now_if_args(function()
     end,
   })
 
--- Mappings to show/hide dot-files ==============================================
+  -- Mappings to show/hide dot-files ==============================================
 
   local show_dotfiles = true
 
@@ -64,6 +64,29 @@ Config.now_if_args(function()
     callback = function(args)
       local buf_id = args.data.buf_id
       vim.keymap.set('n', 'g.', toggle_dotfiles, { buffer = buf_id })
+    end,
+  })
+
+  -- Mappings to work with fs entries ==========================================
+
+  local yank_path = function()
+    local path = (MiniFiles.get_fs_entry() or {}).path
+    if path == nil then return vim.notify('Cursor is not on valid entry') end
+    vim.fn.setreg(vim.v.register, path)
+  end
+
+  local ui_open = function() vim.ui.open(MiniFiles.get_fs_entry().path) end
+  local pdf_open = function() io.popen("zathura --fork " .. MiniFiles.get_fs_entry().path) end
+  local dragndrop = function() io.popen("dragon-drop " .. MiniFiles.get_fs_entry().path) end
+
+  vim.api.nvim_create_autocmd('User', {
+    pattern = 'MiniFilesBufferCreate',
+    callback = function(args)
+      local b = args.data.buf_id
+      vim.keymap.set('n', 'gx', ui_open, { buffer = b, desc = 'OS open' })
+      vim.keymap.set('n', 'gp', pdf_open, { buffer = b, desc = 'PDF open' })
+      vim.keymap.set('n', 'gd', dragndrop, { buffer = b, desc = 'Drag-n-Drop' })
+      vim.keymap.set('n', 'gy', yank_path, { buffer = b, desc = 'Yank path' })
     end,
   })
 end)
