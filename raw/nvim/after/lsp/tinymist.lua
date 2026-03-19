@@ -1,6 +1,6 @@
 return {
     settings = {
         formatterMode = 'typstyle',
-        exportPdf = 'onTitle',
+        exportPdf = 'onDocumentHasTitle',
     },
 }
