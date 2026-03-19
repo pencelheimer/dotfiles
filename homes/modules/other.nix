@@ -166,6 +166,7 @@
         "it.mijorus.gearlever"
         "io.github.kolunmi.Bazaar"
         "com.collaboraoffice.Office"
+        "io.github.limo_app.limo"
         {
           appId = "com.nvidia.geforcenow";
           origin = "GFNLinux";
@@ -225,6 +226,27 @@
             sockets = ["wayland" "x11" "pulseaudio"];
             devices = ["all"]; # gpu dri?
             shared = ["ipc" "network"];
+          };
+        };
+
+        "io.github.limo_app.limo" = {
+          Context = {
+            filesystems = [
+              "~/.steam/steam/appcache/librarycache:ro"
+
+              "~/.local/share/Steam"
+              "~/Games"
+              "~/.local/share/Steam/steamapps/compatdata"
+
+              "/mnt/endeavouros/home/dumbnerd/.local/share/Steam"
+              "/mnt/endeavouros/home/dumbnerd/Games"
+              "/mnt/endeavouros/home/dumbnerd/.local/share/Steam/steamapps/compatdata"
+
+              "/mnt/endeavouros/home/dumbnerd"
+            ];
+
+            sockets = ["wayland" "x11" "fallback-x11"];
+            shared = ["network" "ipc"];
           };
         };
       };
