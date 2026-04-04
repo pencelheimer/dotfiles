@@ -1,4 +1,8 @@
-{pkgs, inputs, ...}: {
+{
+  pkgs,
+  inputs,
+  ...
+}: {
   home.packages = with pkgs; [
     syshud
     (pkgs.syspower.overrideAttrs (oldAttrs: rec {
@@ -75,6 +79,8 @@
 
     bun
     uv
+
+    google-chat-linux
   ];
 
   programs.vesktop.enable = true;
