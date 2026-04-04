@@ -61,13 +61,14 @@
 
         search = {
           force = true;
-          default = "unduckified";
+          default = "Kagi";
           engines = {
-            "unduck" = {
+            "Kagi" = {
               urls = [
-                { template = "https://unduck.link"; params = [ { name = "q"; value = "{searchTerms}"; } ]; }
+                { template = "https://kagi.com/search?"; params = [ { name = "q"; value = "{searchTerms}"; } ]; }
               ];
             };
+
             "unduckified" = {
               urls = [
                 { template = "https://s.dunkirk.sh"; params = [ { name = "q"; value = "{searchTerms}"; } ]; }
