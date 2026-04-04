@@ -1,7 +1,7 @@
 {pkgs, lib, ...}: {
   config = {
     services.postgresql = {
-      enable = true;
+      enable = false;
       package = pkgs.postgresql_17;
       ensureDatabases = ["sds"];
       authentication = lib.mkOverride 10 ''

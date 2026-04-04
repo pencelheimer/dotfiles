@@ -23,35 +23,35 @@
   # environment.sessionVariables.SSH_AUTH_SOCK = "$HOME/.var/app/com.bitwarden.desktop/data/.bitwarden-ssh-agent.sock";
   environment.sessionVariables.SSH_AUTH_SOCK = "$HOME/.bitwarden-ssh-agent.sock";
 
-  systemd.services.lspmux = {
-    description = "LSP multiplexer";
-
-    after = ["network.target"];
-    wantedBy = ["multi-user.target"];
-
-    path = [
-      pkgs.rust-analyzer
-      pkgs.clippy
-      pkgs.cargo
-      pkgs.rustc
-      pkgs.coreutils
-      pkgs.bash
-      pkgs.gcc
-    ];
-
-    serviceConfig = {
-      Type = "simple";
-      ExecStart = "${lib.getExe pkgs.lspmux} server";
-      User = "${userName}";
-
-      Environment = [
-        "HOME=/home/pencelheimer"
-      ];
-
-      Restart = "on-failure";
-      RestartSec = "3s";
-    };
-  };
+  # systemd.services.lspmux = {
+  #   description = "LSP multiplexer";
+  #
+  #   after = ["network.target"];
+  #   wantedBy = ["multi-user.target"];
+  #
+  #   path = [
+  #     pkgs.rust-analyzer
+  #     pkgs.clippy
+  #     pkgs.cargo
+  #     pkgs.rustc
+  #     pkgs.coreutils
+  #     pkgs.bash
+  #     pkgs.gcc
+  #   ];
+  #
+  #   serviceConfig = {
+  #     Type = "simple";
+  #     ExecStart = "${lib.getExe pkgs.lspmux} server";
+  #     User = "${userName}";
+  #
+  #     Environment = [
+  #       "HOME=/home/pencelheimer"
+  #     ];
+  #
+  #     Restart = "on-failure";
+  #     RestartSec = "3s";
+  #   };
+  # };
 
   # nix search nixpkgs ...
   environment.systemPackages = with pkgs; [
