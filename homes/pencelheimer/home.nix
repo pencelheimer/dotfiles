@@ -49,6 +49,7 @@
       homeDir = f: "$HOME/${f}";
     in {
       enable = true;
+      setSessionVariables = true;
       createDirectories = true;
       templates = homeDir "Templates";
       publicShare = homeDir "Public";

@@ -80,6 +80,8 @@
         name = "Tela-dark";
         package = pkgs.tela-icon-theme;
       };
+
+      gtk4.theme = config.gtk.theme;
     };
 
     stylix.targets.qt.enable = false;

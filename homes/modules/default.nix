@@ -21,7 +21,7 @@
 
   wm = {
     niri.enable = lib.mkDefault true;
-    wallpaper.swww.enable = true;
+    wallpaper.awww.enable = true;
     bar.waybar.enable = lib.mkDefault true;
     notifyd.swaync.enable = lib.mkDefault true;
     dmenu.walker.enable = lib.mkDefault true;

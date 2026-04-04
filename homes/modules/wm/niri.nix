@@ -3,16 +3,15 @@
   pkgs,
   lib,
   ...
-}:
-{
+}: {
   options.wm.niri = {
     enable = lib.mkEnableOption "niri";
   };
 
   config = lib.mkIf config.wm.niri.enable {
-    wm.wallpaper.swww.enable = true;
+    wm.wallpaper.awww.enable = true;
 
-    home.packages = with pkgs; [ niri ];
+    home.packages = with pkgs; [niri];
 
     xdg.portal = {
       enable = true;
