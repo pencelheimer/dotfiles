@@ -71,6 +71,7 @@
         rustc # needed for rust-analyzer std hints
         glibc # needed for lldb
         nodejs # needed for makrdown preview plugin
+        xdg-utils # for opening files
       ];
     };
   };

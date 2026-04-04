@@ -7,7 +7,13 @@ vim.keymap.set(
 )
 
 vim.keymap.set(
-  "n", "<leader>la",
+  { "n", "v" }, "<leader>la",
+  function() vim.cmd.RustLsp('codeAction') end,
+  { silent = true, buffer = bufnr }
+)
+
+vim.keymap.set(
+  "v", "<leader>la",
   function() vim.cmd.RustLsp('codeAction') end,
   { silent = true, buffer = bufnr }
 )
@@ -17,3 +23,13 @@ vim.keymap.set(
   function() vim.cmd.RustLsp({ 'hover', 'actions' }) end,
   { silent = true, buffer = bufnr }
 )
+
+-- Disable rust-analyzer's string highlighting so Tree-sitter injections work
+local lsp_blockers = {
+  "@lsp.type.string.rust",
+  "@lsp.typemod.string.macro.rust",
+}
+
+for _, group in ipairs(lsp_blockers) do
+  vim.api.nvim_set_hl(0, group, {})
+end

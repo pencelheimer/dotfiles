@@ -43,8 +43,6 @@ vim.o.splitright       = true                -- Vertical splits will be to the r
 vim.o.winborder        = 'single'            -- Use border in floating windows
 vim.o.wrap             = false               -- Don't visually wrap lines (toggle with \w)
 
-vim.hl.priorities.semantic_tokens = 95       -- Make Tree-sitter (100) beat LSP (95) globally
-
 vim.opt.scrolloff      = 10                  -- Minimal number of lines to keep around the cursor
 
 vim.o.cursorlineopt    = 'screenline,number' -- Show cursor line per screen line

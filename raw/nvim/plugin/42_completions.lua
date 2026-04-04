@@ -1,22 +1,18 @@
 Config.now_if_args(function()
-  local process_items_opts = { kind_priority = { Text = -1, Snippet = 99 } }
-  local process_items = function(items, base)
-    return MiniCompletion.default_process_items(items, base, process_items_opts)
+  local blink_build = function(e)
+    vim.notify('Building blink.cmp', vim.log.levels.INFO)
+    vim.cmd.packadd({ args = { e.data.spec.name }, bang = false })
+    require("blink.cmp.fuzzy.build").build()
   end
+  Config.on_packchanged('blink.cmp', { 'install', 'update' }, blink_build, 'Build fyzzy matcher for the blink.cmp')
 
-  require('mini.completion').setup({
-    lsp_completion = {
-      source_func = 'omnifunc',
-      auto_setup = true,
-      process_items = process_items,
-    },
-    window = { signature = { width = 40 } }, -- NOTE(pencelheimer): this is not working
+  vim.pack.add({ "https://github.com/saghen/blink.cmp" })
+
+  require('blink.cmp').setup({
+    snippets = { preset = 'mini_snippets' },
+    sources = { default = { 'lsp', 'path', 'snippets', 'buffer' } },
+    completion = { documentation = { auto_show = true, auto_show_delay_ms = 0 } },
+    signature = { enabled = true },
+    fuzzy = { implementation = 'prefer_rust' },
   })
-
-  local on_attach = function(ev)
-    vim.bo[ev.buf].omnifunc = 'v:lua.MiniCompletion.completefunc_lsp'
-  end
-  Config.new_autocmd('LspAttach', nil, on_attach, "Set 'omnifunc'")
-
-  vim.lsp.config('*', { capabilities = MiniCompletion.get_lsp_capabilities() })
 end)

@@ -1,5 +1,9 @@
 {
   "plugins": {
+    "blink.cmp": {
+      "rev": "679a2ffad4bae720bb12e6bcdf57b0dd8b8a80f8",
+      "src": "https://github.com/saghen/blink.cmp"
+    },
     "conform.nvim": {
       "rev": "086a40dc7ed8242c03be9f47fbcee68699cc2395",
       "src": "https://github.com/stevearc/conform.nvim"
@@ -13,7 +17,7 @@
       "src": "https://github.com/scottmckendry/cyberdream.nvim"
     },
     "fidget.nvim": {
-      "rev": "7fa433a83118a70fe24c1ce88d5f0bd3453c0970",
+      "rev": "889e2e96edef4e144965571d46f7a77bcc4d0ddf",
       "src": "https://github.com/j-hui/fidget.nvim"
     },
     "foldtext.nvim": {
@@ -28,16 +32,20 @@
       "rev": "b49fc24094f93aa29a7592034b97095b709c3528",
       "src": "https://github.com/nishigori/increment-activator"
     },
+    "jellybeans.nvim": {
+      "rev": "f75e0cfba0cdf3b7530301df8375367c29fbd310",
+      "src": "https://github.com/wtfox/jellybeans.nvim"
+    },
     "kanagawa.nvim": {
       "rev": "aef7f5cec0a40dbe7f3304214850c472e2264b10",
       "src": "https://github.com/rebelot/kanagawa.nvim"
     },
     "mini.nvim": {
-      "rev": "9990c41f10f54f29a888d13024c9f765037bde23",
+      "rev": "3923662bf3d6ca49a9503f8d7196ea0450983e6a",
       "src": "https://github.com/nvim-mini/mini.nvim"
     },
     "moonfly": {
-      "rev": "d11b3d04cc1cb71a778d67a4df73283a5a6d66f4",
+      "rev": "43d8eb9dd2a1154dd8259ee3ce37cbbdb28c405c",
       "src": "https://github.com/bluz71/vim-moonfly-colors"
     },
     "nvim-autopairs": {
@@ -45,7 +53,7 @@
       "src": "https://github.com/windwp/nvim-autopairs"
     },
     "nvim-dap": {
-      "rev": "a9d8cb68ee7184111dc66156c4a2ebabfbe01bc5",
+      "rev": "4f5deb110d9ff8994d96c21df95e2271d11214f9",
       "src": "https://github.com/mfussenegger/nvim-dap"
     },
     "nvim-dap-go": {
@@ -53,23 +61,23 @@
       "src": "https://github.com/leoluz/nvim-dap-go"
     },
     "nvim-dap-lldb": {
-      "rev": "9c795072554b3dbf738d0c9cb29d28d7f820b2b4",
+      "rev": "1f531bac2896b3d9ceb098b277c419c811f4609d",
       "src": "https://github.com/julianolf/nvim-dap-lldb"
     },
     "nvim-dap-view": {
-      "rev": "cd14d34150b05d633610ff8d39d6934110696923",
+      "rev": "af144cfbdeafd90dfdaa3d406e3f8e06ddc4f0e3",
       "src": "https://github.com/igorlfs/nvim-dap-view"
     },
     "nvim-lspconfig": {
-      "rev": "dd261ad5266ab5bbec249d21efeceda98ff3e1a6",
+      "rev": "8e2084bf5e40c79c1f42210a6ef96a0a4793a763",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
-      "rev": "2f5d4c3f3c675962242096bcc8e586d76dd72eb2",
+      "rev": "81295eb0c5fc05ab3796a28c9f160c3ac4098106",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-treesitter-textobjects": {
-      "rev": "4e91b5d0394329a229725b021a8ea217099826ef",
+      "rev": "93d60a475f0b08a8eceb99255863977d3a25f310",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
     },
     "onedark.nvim": {
@@ -77,7 +85,7 @@
       "src": "https://github.com/navarasu/onedark.nvim"
     },
     "outline.nvim": {
-      "rev": "ead1820d49c8e79ce89cab1c2c318981b695c9d2",
+      "rev": "c293eb56db880a0539bf9d85b4a27816960b863e",
       "src": "https://github.com/hedyhli/outline.nvim"
     },
     "pgsql.vim": {
@@ -97,7 +105,7 @@
       "src": "https://github.com/mrcjkb/rustaceanvim"
     },
     "snacks.nvim": {
-      "rev": "a049339328e2599ad6e85a69fa034ac501e921b2",
+      "rev": "ad9ede6a9cddf16cedbd31b8932d6dcdee9b716e",
       "src": "https://github.com/folke/snacks.nvim"
     },
     "tabout.nvim": {
@@ -105,7 +113,7 @@
       "src": "https://github.com/abecodes/tabout.nvim"
     },
     "treesitter-modules.nvim": {
-      "rev": "0cc09da40061051b0186479203faa75052cddab6",
+      "rev": "34e50df1c49376592788dcb245683e2f43444444",
       "src": "https://github.com/MeanderingProgrammer/treesitter-modules.nvim"
     },
     "ts-install.nvim": {
@@ -121,7 +129,7 @@
       "src": "https://github.com/tpope/vim-sleuth"
     },
     "vim-startuptime": {
-      "rev": "c12649b2458e34ec6dde8f1bdfe830661a613a6b",
+      "rev": "06fb803a85d208a2385e0aba360e198ae118b812",
       "src": "https://github.com/dstein64/vim-startuptime",
       "version": "'alternative_exe_path'"
     }
