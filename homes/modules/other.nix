@@ -162,15 +162,15 @@
       ];
       packages = [
         "com.github.tchx84.Flatseal"
-        "org.pgadmin.pgadmin4"
-        "it.mijorus.gearlever"
-        "io.github.kolunmi.Bazaar"
+        # "org.pgadmin.pgadmin4"
+        # "it.mijorus.gearlever"
         "com.collaboraoffice.Office"
         "io.github.limo_app.limo"
-        {
-          appId = "com.nvidia.geforcenow";
-          origin = "GFNLinux";
-        }
+        "io.anytype.anytype"
+        # {
+        #   appId = "com.nvidia.geforcenow";
+        #   origin = "GFNLinux";
+        # }
       ];
       overrides = {
         global = {
