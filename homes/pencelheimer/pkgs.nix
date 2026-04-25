@@ -41,7 +41,7 @@
     delve
 
     dbmate
-    pgcli
+    # pgcli
     postgres-language-server # includes CLI, so needed in nvim and here
 
     git-crypt
@@ -81,6 +81,10 @@
     uv
 
     google-chat-linux
+
+    prismlauncher
+
+    inputs.lget.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   programs.vesktop.enable = true;
