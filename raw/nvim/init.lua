@@ -43,6 +43,7 @@ vim.filetype.add({
     puml = 'plantuml',
     iuml = 'plantuml',
     wsd = 'plantuml',
+    caddy = 'caddy',
   },
   pattern = {
     ['.*/waybar/config'] = 'jsonc',
@@ -51,5 +52,8 @@ vim.filetype.add({
     ['.*/hypr/.*%.conf'] = 'hyprlang',
     ['.*tmux.conf'] = 'tmux',
     ['.*allowed_signers'] = 'sshdconfig',
+  },
+  filename = {
+    Caddyfile = 'caddy',
   },
 })

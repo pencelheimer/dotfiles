@@ -75,6 +75,21 @@
       ])
   (#set! injection.language "regex"))
 
+(attribute
+  (identifier) @attr_name (#eq? @attr_name "nutype")
+  (token_tree
+    (identifier) @func_name (#eq? @func_name "validate")
+    (token_tree
+      (identifier) @arg_name (#eq? @arg_name "regex")
+      [
+        (string_literal (string_content) @injection.content)
+        (raw_string_literal (string_content) @injection.content)
+      ]
+      (#set! injection.language "regex")
+    )
+  )
+)
+
 ; Highlight SQL in `sqlx::query!()`, `sqlx::query_scalar!()`, and `sqlx::query_scalar_unchecked!()`
 (macro_invocation
   macro: (scoped_identifier
@@ -108,20 +123,40 @@
   )
   (#set! injection.language "sql"))
 
-; Highlight SQL in `sqlx::query*` and `sqlx::raw_sql` functions
+; Highlight SQL in sqlx functions with turbofish (generic_function)
+(call_expression
+  function: (generic_function
+    function: (scoped_identifier
+      path: (identifier) @path (#eq? @path "sqlx")
+      name: (identifier) @name (#match? @name "^(query|query_as|raw_sql)$")))
+  arguments: (arguments
+    [
+      (string_literal (string_content) @injection.content)
+      (raw_string_literal (string_content) @injection.content)
+    ])
+  (#set! injection.language "sql"))
+
+; Highlight SQL in sqlx functions without turbofish
 (call_expression
   function: (scoped_identifier
-    path: (identifier) @_sqlx
-    (#eq? @_sqlx "sqlx")
-    name: (identifier) @_query_function)
-  (#match? @_query_function "^query.*|raw_sql$")
+    path: (identifier) @path (#eq? @path "sqlx")
+    name: (identifier) @name (#match? @name "^(query|query_as|raw_sql)$"))
   arguments: (arguments
-    .
     [
-      (string_literal
-        (string_content) @injection.content)
-      (raw_string_literal
-        (string_content) @injection.content)
+      (string_literal (string_content) @injection.content)
+      (raw_string_literal (string_content) @injection.content)
+    ])
+  (#set! injection.language "sql"))
+
+; Highlight SQL in QueryBuilder::new|push|push_bind("...")
+(call_expression
+  function: (scoped_identifier
+    path: (identifier) @path (#eq? @path "QueryBuilder")
+    name: (identifier) @name (#match? @name "^(new|push|push_bind)$"))
+  arguments: (arguments
+    [
+      (string_literal (string_content) @injection.content)
+      (raw_string_literal (string_content) @injection.content)
     ])
   (#set! injection.language "sql"))
 

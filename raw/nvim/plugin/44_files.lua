@@ -1,4 +1,4 @@
-Config.now_if_args(function()
+Config.now(function()
   require('mini.files').setup({
     windows = { preview = true, width_preview = 50 },
     mappings = {

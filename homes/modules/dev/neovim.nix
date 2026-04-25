@@ -25,10 +25,11 @@
 
     programs.neovim = {
       enable = true;
+      withPython3 = false;
       withRuby = false;
       defaultEditor = true;
 
-      package = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
+      # package = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
       extraPackages = with pkgs; [
         # lsps

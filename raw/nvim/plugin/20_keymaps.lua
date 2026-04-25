@@ -16,6 +16,9 @@ Config.nmap('<C-l>', '<C-w><C-l>', 'Move focus right')
 Config.nmap('<C-j>', '<C-w><C-j>', 'Move focus down')
 Config.nmap('<C-k>', '<C-w><C-k>', 'Move focus up')
 
+Config.nmap('j', 'gj', "Move between virtual lines")
+Config.nmap('k', 'gk', "Move between virtual lines")
+
 -- Fast actions
 Config.nmap('<C-c>', 'ciw', 'Change current word')
 Config.nmap('<C-y>', 'yiw', 'Copy current word')
@@ -24,6 +27,15 @@ Config.xmap('<C-f>', '<Cmd>lua require("conform").format()<CR>', 'Format selecti
 
 -- Open file explorer
 Config.nmap('\\', '<Cmd>lua MiniFiles.open(vim.api.nvim_buf_get_name(0))<CR>', 'Directory')
+
+-- Description for default lsp actions
+Config.nmap('gra', '<Cmd>lua vim.lsp.buf.code_action()<CR>', 'Code action')
+Config.nmap('gri', '<Cmd>lua vim.lsp.buf.implementation()<CR>', 'Implementation')
+Config.nmap('grn', '<Cmd>lua vim.lsp.buf.rename()<CR>', 'Rename')
+Config.nmap('grr', '<Cmd>lua vim.lsp.buf.references()<CR>', 'References')
+Config.nmap('grt', '<Cmd>lua vim.lsp.buf.type_definition()<CR>', 'Type definition')
+Config.nmap('grd', '<Cmd>lua vim.lsp.buf.definition()<CR>', 'Source definition')
+Config.nmap('grx', '<Cmd>lua vim.lsp.codelens.run()<CR>', 'Run codelens')
 
 -- Leader mappings ============================================================
 Config.leader_group_clues = {
@@ -116,16 +128,6 @@ Config.nmap_leader('go', '<Cmd>lua MiniDiff.toggle_overlay()<CR>', 'Toggle overl
 Config.nmap_leader('gs', '<Cmd>lua MiniGit.show_at_cursor()<CR>', 'Show at cursor')
 
 Config.xmap_leader('gs', '<Cmd>lua MiniGit.show_at_cursor()<CR>', 'Show at selection')
-
--- l is for 'Language'.
-Config.nmap_leader('la', '<Cmd>lua vim.lsp.buf.code_action()<CR>', 'Actions')
-Config.nmap_leader('ld', '<Cmd>lua vim.diagnostic.open_float()<CR>', 'Diagnostic popup')
-Config.nmap_leader('li', '<Cmd>lua vim.lsp.buf.implementation()<CR>', 'Implementation')
-Config.nmap_leader('lh', '<Cmd>lua vim.lsp.buf.hover()<CR>', 'Hover')
-Config.nmap_leader('lr', '<Cmd>lua vim.lsp.buf.rename()<CR>', 'Rename')
-Config.nmap_leader('lR', '<Cmd>lua vim.lsp.buf.references()<CR>', 'References')
-Config.nmap_leader('ls', '<Cmd>lua vim.lsp.buf.definition()<CR>', 'Source definition')
-Config.nmap_leader('lt', '<Cmd>lua vim.lsp.buf.type_definition()<CR>', 'Type definition')
 
 -- o is for 'Other'.
 Config.nmap_leader('ot', '<Cmd>lua MiniTrailspace.trim()<CR>', 'Trim trailspace')

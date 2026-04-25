@@ -7,13 +7,7 @@ vim.keymap.set(
 )
 
 vim.keymap.set(
-  { "n", "v" }, "<leader>la",
-  function() vim.cmd.RustLsp('codeAction') end,
-  { silent = true, buffer = bufnr }
-)
-
-vim.keymap.set(
-  "v", "<leader>la",
+  { "n", "v" }, "gra",
   function() vim.cmd.RustLsp('codeAction') end,
   { silent = true, buffer = bufnr }
 )
