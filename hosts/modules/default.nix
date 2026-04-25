@@ -19,6 +19,6 @@
     ./flatpak.nix
     ./udev.nix
     ./ydotool.nix
-    ./ollama.nix
+    ./llm.nix
   ];
 }
