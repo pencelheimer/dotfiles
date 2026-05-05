@@ -49,6 +49,7 @@
         ];
         modules-right = [
           # "custom/schedule"
+          "custom/sync"
           "tray"
           "niri/language"
           "memory"
@@ -272,6 +273,13 @@
             click-to-reveal = true;
           };
         };
+
+        "custom/sync" = {
+          return-type = "json";
+          exec = "~/.scripts/bar-sync.sh";
+          interval = 5;
+          format = "{}";
+        };
       };
 
       style = let
@@ -383,6 +391,7 @@
           #custom-reboot,
           #custom-suspend,
           #custom-lock,
+          #custom-sync,
           #clock,
           #temperature,
           #custom-notifications,
