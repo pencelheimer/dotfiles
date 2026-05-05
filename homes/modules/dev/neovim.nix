@@ -12,7 +12,7 @@
   config = lib.mkIf config.dev.neovim.enable {
     stylix.targets.neovim.enable = false;
 
-    home.file.".config/nvim" = {
+    xdg.configFile."nvim" = {
       recursive = true;
       source = config.lib.file.mkOutOfStoreSymlink "/home/pencelheimer/.config/nixos/raw/nvim";
     };
@@ -28,6 +28,7 @@
       withPython3 = false;
       withRuby = false;
       defaultEditor = true;
+      sideloadInitLua = true;
 
       # package = inputs.neovim-nightly-overlay.packages.${pkgs.stdenv.hostPlatform.system}.default;
 
