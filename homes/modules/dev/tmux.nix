@@ -41,6 +41,7 @@
           set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
           set-environment -g COLORTERM "truecolor"
 
+          set -g extended-keys on
           set -g mouse on
           set-option -g renumber-windows on
 

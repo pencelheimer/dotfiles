@@ -85,6 +85,10 @@
     prismlauncher
 
     inputs.lget.packages.${pkgs.stdenv.hostPlatform.system}.default
+
+    pi-coding-agent
+
+    antigravity
   ];
 
   programs.vesktop.enable = true;
