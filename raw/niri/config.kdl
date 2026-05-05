@@ -270,6 +270,8 @@ window-rule {
 window-rule {
     match app-id=r#"org.pulseaudio.pavucontrol"#
 
+    min-width  800
+    min-height 460
     open-floating true
 }
 
@@ -282,6 +284,7 @@ window-rule {
 window-rule {
     match app-id=r#"io.github.kukuruzka165.materialgram"#
     match app-id=r#"google-chat-linux"#
+    match app-id=r#"electron"# title="Chat"
     match app-id=r#"TDesktop"#
     match app-id=r#"vesktop"#
     match app-id=r#"thunderbird"#
@@ -312,6 +315,8 @@ window-rule {
 
 window-rule {
     match app-id=r#"google-chat-linux"#
+    match app-id=r#"electron"# title="Chat"
+
     match app-id=r#"^org\.keepassxc\.KeePassXC$"#
     match app-id=r#"^org\.gnome\.World\.Secrets$"#
     match app-id=r#"Bitwarden"#
@@ -404,6 +409,7 @@ window-rule {
     match app-id=r#"vesktop"#
     match app-id=r#"signalbeta"#
     match app-id=r#"google-chat-linux"#
+    match app-id=r#"electron"# title="Chat"
 
     default-column-width { proportion 1.0; }
 }
