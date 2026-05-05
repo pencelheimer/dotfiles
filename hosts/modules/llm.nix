@@ -12,10 +12,13 @@
   services.llama-cpp = {
     enable = true;
     port = 7070;
-    # modelsDir = ../../llm-models;
+    modelsDir = "/var/lib/llama-cpp/models";
     extraFlags = [
       "--jinja"
-      "-c 65536"
     ];
+  };
+
+  systemd.services.llama-cpp.serviceConfig = {
+    BindReadOnlyPaths = [ "/home/pencelheimer/models:/var/lib/llama-cpp/models" ];
   };
 }
