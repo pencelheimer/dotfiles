@@ -1,0 +1,12 @@
+[Unit]
+Description=KDE Connect Service
+Documentation=https://userbase.kde.org/KDEConnect
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=/usr/lib/kdeconnectd
+Restart=on-abort
+
+[Install]
+WantedBy=graphical-session.target

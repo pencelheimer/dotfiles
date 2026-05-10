@@ -1,0 +1,1 @@
+; inherits: _typescript,ecma

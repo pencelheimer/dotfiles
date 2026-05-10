@@ -1,0 +1,223 @@
+// This configuration is merged with the default vicinae configuration file, which you can obtain by running the `vicinae config default` command.
+// Every item defined in this file takes precedence over the values defined in the default config or any other imported file.
+//
+// You can make manual edits to this file, however you should keep in mind that this file may be written to by vicinae when a configuration change is made through the GUI.
+// When that happens, any custom comments or formatting will be lost.
+//
+// If you want to maintain a configuration file with your own comments and formatting, you should create a separate file and add it to the 'imports' array.
+//
+// Learn more about configuration at https://docs.vicinae.com/config
+
+{
+   "$schema": "https://vicinae.com/schemas/config.json",
+   "close_on_focus_loss": false,
+   "pop_to_root_on_close": true,
+   "activate_on_single_click": true,
+   "keybinding": "default",
+   "font": {
+      "normal": {
+         "family": "IosevkaTerm Nerd Font",
+         "size": 12
+      }
+   },
+   "theme": {
+      "dark": {
+         "name": "one-dark"
+      }
+   },
+   "launcher_window": {
+      "opacity": 1,
+      "client_side_decorations": {
+         "enabled": true
+      },
+      "layer_shell": {
+         "layer": "overlay",
+         "keyboard_interactivity": "exclusive",
+         "enabled": true
+      }
+   },
+   "favorites": [
+      "applications:zen",
+      "applications:io.github.kukuruzka165.materialgram",
+      "applications:org.gnome.Nautilus"
+   ],
+   "providers": {
+      "@Gelei/store.vicinae.bluetooth": {
+         "preferences": {
+            "connectionToggleable": true
+         },
+         "entrypoints": {
+            "discoverable": {
+               "enabled": false
+            },
+            "scan": {
+               "enabled": false
+            }
+         }
+      },
+      "@gebeto/store.raycast.translate": {
+         "preferences": {
+            "autoInput": false,
+            "defaultAction": "copy",
+            "lang1": "auto",
+            "lang2": "en"
+         },
+         "entrypoints": {
+            "instant-translate-copy": {
+               "enabled": false
+            },
+            "instant-translate-paste": {
+               "enabled": false
+            },
+            "instant-translate-view": {
+               "enabled": false
+            },
+            "quick-translate": {
+               "enabled": false
+            },
+            "translate-form": {
+               "enabled": false
+            }
+         }
+      },
+      "@knoopx/store.vicinae.agenda": {
+         "preferences": {
+            "refreshInterval": "15",
+            "timeFormat": "24h"
+         }
+      },
+      "@knoopx/store.vicinae.stocks": {
+         "preferences": {
+            "refreshInterval": "900",
+            "symbols": "AAPL,MSFT,GOOGL,TSLA"
+         }
+      },
+      "@sovereign/store.vicinae.awww-switcher": {
+         "preferences": {
+            "colorGenTool": "none",
+            "gridRows": "4",
+            "postProduction": "no",
+            "showImageDetails": true,
+            "toggleVicinaeSetting": true,
+            "transitionDuration": "3",
+            "transitionFPS": "60",
+            "transitionStep": "90",
+            "transitionType": "random",
+            "wallpaperPath": "~/pictures/wallpapers"
+         },
+         "entrypoints": {
+            "wprandom": {
+               "enabled": false
+            }
+         }
+      },
+      "applications": {
+         "entrypoints": {
+            "io.github.kukuruzka165.materialgram": {
+               "alias": "tg"
+            },
+            "zen": {
+               "alias": "zen"
+            }
+         }
+      },
+      "browser-extension": {
+         "enabled": false
+      },
+      "calculator": {
+         "entrypoints": {
+            "refresh-rates": {
+               "enabled": false
+            }
+         }
+      },
+      "clipboard": {
+         "preferences": {
+            "encryption": true,
+            "eraseOnStartup": false,
+            "ignorePasswords": false,
+            "monitoring": true
+         },
+         "entrypoints": {
+            "clear": {
+               "enabled": false
+            },
+            "clear-history": {
+               "enabled": false
+            },
+            "history": {
+               "preferences": {
+                  "defaultAction": "copy"
+               }
+            }
+         }
+      },
+      "core": {
+         "entrypoints": {
+            "about": {
+               "enabled": false
+            },
+            "documentation": {
+               "enabled": false
+            },
+            "keybind-settings": {
+               "enabled": false
+            },
+            "manage-fallback": {
+               "enabled": false
+            },
+            "open-default-config": {
+               "enabled": false
+            },
+            "prune-memory": {
+               "enabled": false
+            },
+            "reload-scripts": {
+               "enabled": false
+            },
+            "report-bug": {
+               "enabled": false
+            },
+            "search-builtin-icons": {
+               "enabled": false
+            },
+            "sponsor": {
+               "enabled": false
+            },
+            "store": {
+               "preferences": {
+                  "alwaysShowIntro": false
+               }
+            }
+         }
+      },
+      "developer": {
+         "entrypoints": {
+            "create": {
+               "enabled": false
+            }
+         }
+      },
+      "font": {
+         "entrypoints": {
+            "browse": {
+               "enabled": true
+            }
+         }
+      },
+      "scripts": {
+         "preferences": {
+            "customDirs": [
+               "/home/pencelheimer/projects/scripts"
+            ]
+         }
+      },
+      "system": {
+         "entrypoints": {
+            "run": {
+               "enabled": false
+            }
+         }
+      }
+   }
+}

@@ -1,0 +1,28 @@
+filenames:
+  "videos":
+    icon:
+      glyph: 
+  "downloads":
+    icon:
+      glyph: 
+  "pictures":
+    icon:
+      glyph: 
+  "music":
+    icon:
+      glyph: 
+  "templates":
+    icon:
+      glyph: 
+  "projects":
+    icon:
+      glyph: 
+  "public":
+    icon:
+      glyph: 
+  "desktop":
+    icon:
+      glyph: 
+  "documents":
+    icon:
+      glyph: 󰈙

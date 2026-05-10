@@ -1,0 +1,243 @@
+[
+  {
+    "position": "top",
+    "layer": "top",
+    "height": 35,
+    "spacing": 4,
+
+    "output": [
+      "eDP-1",
+      "eDP-2",
+      "HDMI-A-2",
+      "DP-3",
+      "DP-4",
+      "DP-5"
+    ],
+
+    "modules-center": [
+      "niri/window"
+    ],
+
+    "modules-left": [
+      "niri/workspaces",
+      "idle_inhibitor",
+      "pulseaudio#output",
+      "pulseaudio#input",
+      "backlight",
+      "mpris"
+    ],
+
+    "modules-right": [
+      "tray",
+      "niri/language",
+      "memory",
+      "battery",
+      "custom/notifications",
+      "clock"
+    ],
+
+    "backlight": {
+      "format": "{percent}% {icon}",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "tooltip": false
+    },
+    "battery": {
+      "format": "{capacity}% {icon} {power:.1f} wt",
+      "format-charging": "{capacity}% 󰂄",
+      "format-icons": [
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "format-plugged": "{capacity}% ",
+      "interval": 1,
+      "states": {
+        "critical": 15,
+        "good": 100,
+        "warning": 40
+      }
+    },
+    "clock": {
+      "calendar": {
+        "format": {
+          "days": "<span color='#ecc6d9'><b>{}</b></span>",
+          "months": "<span color='#ffead3'><b>{}</b></span>",
+          "today": "<span color='#ff6699'><b><u>{}</u></b></span>",
+          "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+          "weeks": "<span color='#99ffdd'><b>W{}</b></span>"
+        },
+        "mode": "month",
+        "on-click-right": "mode"
+      },
+      "format": "{:%b %d - %H:%M:%S}",
+      "interval": 1,
+      "tooltip-format": "<tt><big>{calendar}</big></tt>"
+    },
+    "custom/notifications": {
+      "escape": true,
+      "exec": "swaync-client -swb",
+      "exec-if": "which swaync-client",
+      "format": "{} {icon}",
+      "format-icons": {
+        "dnd-inhibited-none": "",
+        "dnd-inhibited-notification": "",
+        "dnd-none": "",
+        "dnd-notification": "",
+        "inhibited-none": "",
+        "inhibited-notification": "",
+        "none": "",
+        "notification": ""
+      },
+      "on-click": "swaync-client -t -sw",
+      "on-click-right": "swaync-client -d -sw",
+      "return-type": "json",
+      "tooltip": false
+    },
+    "custom/schedule": {
+      "exec": "~/.scripts/schedule.sh",
+      "format": "{}",
+      "interval": 30,
+      "return-type": "json",
+      "tooltip": true
+    },
+    "custom/screenrec": {
+      "exec": "~/.scripts/screenrec.sh status",
+      "format": "{}{icon}",
+      "format-icons": {
+        "in_progres": "",
+        "none": ""
+      },
+      "interval": 1,
+      "on-click": "~/.scripts/screenrec.sh togglea",
+      "on-click-right": "~/.scripts/screenrec.sh toggle",
+      "return-type": "json",
+      "tooltip": false
+    },
+    "custom/scripts_icon": {
+      "format": "󱜧"
+    },
+    "custom/vnc": {
+      "format": "󰦉",
+      "on-click": "~/dotfiles/.scripts/vnc.sh toggle"
+    },
+    "custom/xdp": {
+      "format": "󱄋",
+      "on-click": "~/dotfiles/.config/hypr/execs/xdph.sh"
+    },
+    "group/scripts": {
+      "drawer": {
+        "children-class": "script",
+        "click-to-reveal": true,
+        "transition-duration": 100
+      },
+      "modules": [
+        "custom/scripts_icon",
+        "idle_inhibitor",
+        "custom/xdp",
+        "custom/screenrec",
+        "custom/vnc"
+      ],
+      "orientation": "horizontal"
+    },
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "󱙱",
+        "deactivated": "󰌾"
+      }
+    },
+    "memory": {
+      "format": "{}% "
+    },
+    "mpris": {
+      "dynamic-order": [
+        "title"
+      ],
+      "format": "{status_icon} 󰽴 {dynamic}",
+      "max-length": 25,
+      "status-icons": {
+        "paused": "⏸"
+      }
+    },
+    "niri/language": {
+      "format": "{}",
+      "format-en": "En",
+      "format-uk": "Ua",
+      "max-length": 5
+    },
+    "niri/window": {
+      "format": "{}",
+      "icon": true,
+      "icon-size": 30,
+      "max-length": 40,
+      "rewrite": {
+        "(.*)Mozilla Firefox": "Mozzarella Firefox"
+      },
+      "separate-outputs": true
+    },
+    "niri/workspaces": {
+      "all-outputs": false,
+      "disable-scroll": true,
+      "format": "{icon}",
+      "format-icons": {
+        "browser": "",
+        "default": "",
+        "games": "󰺷",
+        "other": "",
+        "social": "󰻞",
+        "terminal": ""
+      },
+      "on-click": "activate"
+    },
+    "pulseaudio#input": {
+      "format": "{format_source}",
+      "format-source": " {volume} %",
+      "format-source-muted": "",
+      "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+      "on-click-right": "pavucontrol",
+      "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 1%-",
+      "on-scroll-up": "wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SOURCE@ 1%+"
+    },
+    "pulseaudio#output": {
+      "format": "{icon} {volume}%",
+      "format-bluetooth": "{icon} 󰂯 {volume}%",
+      "format-icons": {
+        "default": "󰕾",
+        "default-muted": "󰖁",
+        "hands-free": "",
+        "hands-free-muted": "",
+        "hdmi": "󰡁",
+        "headphone": "󰋋",
+        "headphone-muted": "󰟎",
+        "headset": "󰋎",
+        "headset-muted": "󰋐",
+        "phone": "",
+        "phone-muted": "",
+        "speaker": "󰓃",
+        "speaker-muted": "󰓄"
+      },
+      "format-muted": "{icon}",
+      "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+      "on-click-right": "pavucontrol",
+      "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 1%-",
+      "on-scroll-up": "wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 1%+",
+      "scroll-step": 5.0,
+      "smooth-scrolling-threshold": 1
+    },
+    "tray": {
+      "spacing": 0
+    }
+  }
+]
