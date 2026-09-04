@@ -1,0 +1,6 @@
+- omnipkg:
+    install:
+      - eza
+
+- link:
+    ~/.config/eza: files

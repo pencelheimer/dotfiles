@@ -1,0 +1,10 @@
+- omnipkg:
+    install:
+      - awww
+
+- link:
+    ~/.config/systemd/user/awww.service: files/awww.service
+
+- shell:
+    - description: Enable awww service
+      command: systemctl enable --user --now awww.service

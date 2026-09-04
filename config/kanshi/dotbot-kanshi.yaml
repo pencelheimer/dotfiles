@@ -1,0 +1,6 @@
+- omnipkg:
+    install:
+      - kanshi
+
+- link:
+    ~/.config/kanshi: files

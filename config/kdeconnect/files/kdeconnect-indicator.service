@@ -1,0 +1,11 @@
+[Unit]
+Description=KDE Connect Indicator
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=kdeconnect-indicator
+Restart=on-abort
+
+[Install]
+WantedBy=graphical-session.target

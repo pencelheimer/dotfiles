@@ -1,0 +1,6 @@
+- omnipkg:
+    install:
+      - lazygit
+
+- link:
+    ~/.config/lazygit: files

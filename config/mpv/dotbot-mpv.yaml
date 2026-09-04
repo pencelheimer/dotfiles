@@ -1,0 +1,19 @@
+- omnipkg:
+    install:
+      - mpv
+
+- link:
+    ~/.config/mpv/mpv.conf: files/mpv.conf
+    ~/.config/mpv/script-opts: files/script-opts
+
+- create:
+    - ~/.config/mpv/scripts
+
+- shell:
+    - description: Installing uosc plugin for mpv
+      command: bash -c "$(curl -fsSL https://raw.githubusercontent.com/tomasklaen/uosc/HEAD/installers/unix.sh)"
+
+    - description: Installing thumbfast plugin for mpv
+      command: wget https://raw.githubusercontent.com/po5/thumbfast/refs/heads/master/thumbfast.lua -O ~/.config/mpv/scripts/thumbfast.lua
+
+    # TODO(pencelheimer): install mpv-mpris

@@ -1,0 +1,6 @@
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Layer-Rules
+layer-rule {
+    match namespace="notification"
+
+    block-out-from "screencast"
+}

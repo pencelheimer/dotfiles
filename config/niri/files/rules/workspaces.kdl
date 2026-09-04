@@ -1,0 +1,15 @@
+workspace "terminal" {
+    open-on-output "eDP-1"
+}
+
+workspace "browser" {
+    open-on-output "DP-1"
+}
+
+workspace "other" {
+    open-on-output "DP-1"
+}
+
+workspace "social" {
+    open-on-output "eDP-1"
+}

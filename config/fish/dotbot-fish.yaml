@@ -1,0 +1,6 @@
+- omnipkg:
+    install:
+      - fish
+
+- link:
+    ~/.config/fish: files

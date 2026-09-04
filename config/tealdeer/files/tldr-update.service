@@ -1,0 +1,7 @@
+[Unit]
+Description=Update tldr CLI cache
+Documentation=https://tldr.sh/
+
+[Service]
+ExecStart=tldr --update
+Type=oneshot

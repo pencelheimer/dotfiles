@@ -1,0 +1,6 @@
+- omnipkg:
+    install:
+      - zathura
+
+- link:
+    ~/.config/zathura: files

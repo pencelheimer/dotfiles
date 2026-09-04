@@ -1,0 +1,7 @@
+- omnipkg:
+    install:
+      - obs-studio
+
+- link:
+    ~/.config/obs-studio/basic/profiles: files/basic/profiles
+    ~/.config/obs-studio/basic/scenes: files/basic/scenes

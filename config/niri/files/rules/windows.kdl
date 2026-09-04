@@ -1,0 +1,186 @@
+// https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
+window-rule {
+    geometry-corner-radius 0
+    clip-to-geometry true
+    draw-border-with-background false
+}
+
+window-rule {
+    match app-id=r#"org.pulseaudio.pavucontrol"#
+
+    min-width  800
+    min-height 460
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"org.kde.kdeconnect.handler"#
+
+    open-floating true
+}
+
+window-rule {
+    match app-id=r#"io.github.kukuruzka165.materialgram"#
+    match app-id=r#"org.telegram.desktop"#
+    match app-id=r#"google-chat-linux"#
+    match app-id=r#"electron"# title="Chat"
+    match app-id=r#"vesktop"#
+    match app-id=r#"thunderbird"#
+    match app-id=r#"cinny"#
+    match app-id=r#"signalbeta"#
+
+    open-on-workspace "social"
+}
+
+ // Indicate screencasted windows with red colors.
+window-rule {
+    match is-window-cast-target=true
+
+    border {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+
+    shadow {
+        color "#7d0d2d70"
+    }
+
+    tab-indicator {
+        active-color "#f38ba8"
+        inactive-color "#7d0d2d"
+    }
+}
+
+window-rule {
+    match app-id=r#"google-chat-linux"#
+    match app-id=r#"electron"# title="Chat"
+
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    match app-id=r#"Bitwarden"#
+
+    block-out-from "screencast"
+}
+
+window-rule {
+    match app-id="kitty"
+    open-on-workspace "terminal"
+}
+
+window-rule {
+    match app-id="org.gnome.NautilusPreviewer"
+    open-floating true
+}
+
+window-rule {
+    match app-id="re.sonny.Junction"
+    open-floating true
+}
+
+window-rule {
+    match app-id="^steam$" title="^Special Offers$"
+    open-floating true
+    open-maximized false
+    min-width  460
+    min-height 800
+}
+
+window-rule {
+    match app-id="^steam$" title="^Friends List$"
+    default-column-width { fixed 340; }
+    open-floating true
+    open-maximized false
+}
+
+window-rule {
+    match app-id="^org.kde.kdeconnect.daemon$"
+    open-floating true
+    open-maximized false
+    open-fullscreen false
+    open-focused false
+    draw-border-with-background false
+    focus-ring { off; }
+    border { off; }
+    shadow { off; }
+
+    default-floating-position x=0 y=0 relative-to="top-left"
+    min-width  1920
+    min-height 1080
+}
+
+window-rule {
+    match title="^Picture-in-Picture$"
+    match title="^Picture in picture$"
+
+    open-floating true
+    min-width  500
+    min-height 280
+}
+
+window-rule {
+    match app-id="^jetbrains-idea-ce$"
+    open-floating true
+    min-width  500
+    min-height 280
+}
+
+window-rule {
+    match app-id="^zen$"
+    match app-id="^zen-twilight$"
+    match app-id="^helium$"
+    match app-id="^chromium$"
+
+    open-on-workspace "browser"
+    default-column-width { proportion 1.0; }
+}
+
+window-rule {
+    match app-id="^steam$"
+    match app-id="^kitty$"
+    match app-id=r#"io.github.kukuruzka165.materialgram"#
+    match app-id=r#"org.telegram.desktop"#
+    match app-id=r#"vesktop"#
+    match app-id=r#"signalbeta"#
+    match app-id=r#"google-chat-linux"#
+    match app-id=r#"electron"# title="Chat"
+
+    default-column-width { proportion 1.0; }
+}
+
+window-rule {
+    match title="^gsr notify$"
+
+    default-floating-position x=4 y=4 relative-to="top-right"
+}
+
+window-rule {
+    match app-id="^com.gabm.satty$"
+
+    border {
+        width 10
+        active-color "#238636"
+    }
+
+    open-floating true
+}
+
+window-rule {
+    match app-id="^cliamp.desktop$"
+
+    border {
+        width 5
+        inactive-color "#238636"
+    }
+
+    default-column-width { proportion 0.33; }
+}
+
+/-window-rule { // don't work
+    match title="^gsr ui$"
+
+    open-fullscreen false
+    open-maximized false
+    open-floating true
+    min-width 1920
+    min-height 1080
+}

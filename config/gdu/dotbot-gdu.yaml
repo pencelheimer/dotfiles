@@ -1,0 +1,6 @@
+- omnipkg:
+    install:
+      - gdu
+
+- link:
+    ~/.config/gdu: files

@@ -1,0 +1,15 @@
+- omnipkg:
+    install:
+      - tealdeer
+
+- link:
+    ~/.config/tealdeer/config.toml: files/config.toml
+    ~/.config/systemd/user/tldr-update.service: files/tldr-update.service
+    ~/.config/systemd/user/tldr-update.timer: files/tldr-update.timer
+
+- shell:
+    - description: Update tealdeer DB
+      command: tldr --update
+
+    - description: Enable tealdeer update timer
+      command: systemctl enable --user --now tldr-update.timer

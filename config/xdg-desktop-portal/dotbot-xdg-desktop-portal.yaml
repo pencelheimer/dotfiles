@@ -1,0 +1,8 @@
+- omnipkg:
+    install:
+      - xdg-desktop-portal
+      - xdg-desktop-portal-gnome
+      - xdg-desktop-portal-gtk
+
+- link:
+    ~/.config/xdg-desktop-portal: files

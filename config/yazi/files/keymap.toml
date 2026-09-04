@@ -1,0 +1,9 @@
+[[mgr.prepend_keymap]]
+on = "<C-d>"
+run = "shell -- dragon-drop $@"
+desc = "Drag'n'drop selection"
+
+[[mgr.prepend_keymap]]
+on = ["C"]
+run = "plugin ouch"
+desc = "Compress with ouch"

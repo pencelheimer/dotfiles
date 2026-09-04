@@ -1,0 +1,6 @@
+- omnipkg:
+    install:
+      - fastfetch
+
+- link:
+    ~/.config/fastfetch: files

@@ -1,0 +1,14 @@
+[Unit]
+Description=An Answer to your Wayland Wallpaper Woes
+Documentation=man:awww-daemon(1)
+PartOf=graphical-session.target
+After=graphical-session.target
+Requisite=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/awww-daemon
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

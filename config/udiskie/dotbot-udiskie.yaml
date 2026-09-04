@@ -1,0 +1,11 @@
+- omnipkg:
+    install:
+      - udiskie
+
+- link:
+    ~/.config/udiskie: files
+    ~/.config/systemd/user/udiskie.service: files/udiskie.service
+
+- shell:
+    - description: Enable udiskie service
+      command: systemctl enable --user --now udiskie.service

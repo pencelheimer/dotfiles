@@ -1,0 +1,7 @@
+- omnipkg:
+    install:
+      - dconf
+
+- shell:
+    - description: Apply dconf / GSettings
+      command: files/apply.sh

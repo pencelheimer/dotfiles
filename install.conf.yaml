@@ -1,0 +1,48 @@
+- plugins:
+    - plugins/dotbot-omnipkg/omnipkg.py
+    - plugins/dotbot-include/include.py
+
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+
+- clean:
+    ~/.config:
+      recursive: true
+    ~/:
+
+- omnipkg:
+    install:
+      - bitwarden
+      - telegram-desktop
+      - noctalia
+
+- include: config/awww/dotbot-awww.yaml
+- include: config/btop/dotbot-btop.yaml
+- include: config/eza/dotbot-eza.yaml
+- include: config/fastfetch/dotbot-fastfetch.yaml
+- include: config/fish/dotbot-fish.yaml
+- include: config/fontconfig/dotbot-fontconfig.yaml
+- include: config/gammastep/dotbot-gammastep.yaml
+- include: config/gdbus/dotbot-gdbus.yaml
+- include: config/gdu/dotbot-gdu.yaml
+- include: config/git/dotbot-git.yaml
+- include: config/kanshi/dotbot-kanshi.yaml
+- include: config/kdeconnect/dotbot-kdeconnect.yaml
+- include: config/kitty/dotbot-kitty.yaml
+- include: config/lazygit/dotbot-lazygit.yaml
+- include: config/mpv/dotbot-mpv.yaml
+- include: config/niri/dotbot-niri.yaml
+- include: config/nvim/dotbot-nvim.yaml
+- include: config/obs/dotbot-obs.yaml
+- include: config/paru/dotbot-paru.yaml
+- include: config/pipewire/dotbot-pipewire.yaml
+- include: config/tealdeer/dotbot-tealdeer.yaml
+- include: config/udiskie/dotbot-udiskie.yaml
+- include: config/user-dirs/dotbot-user-dirs.yaml
+- include: config/xdg-desktop-portal/dotbot-xdg-desktop-portal.yaml
+- include: config/xdg-terminals/dotbot-xdg-terminals.yaml
+- include: config/yazi/dotbot-yazi.yaml
+- include: config/zathura/dotbot-zathura.yaml

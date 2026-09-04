@@ -1,0 +1,47 @@
+[user]
+    name = pencelheimer
+    email = pencelheimer@proton.me
+    signingkey = ~/.ssh/git-pencelheimer-id.pub
+
+[core]
+    pager = delta
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true
+    line-numbers = true
+    side-by-side = false
+
+[init]
+    defaultBranch = main
+
+[commit]
+    gpgSign = true
+
+[tag]
+    gpgSign = true
+
+[gpg]
+    format = ssh
+
+[gpg "ssh"]
+    program = ssh-keygen
+    allowedSignersFile = ~/.ssh/allowed_signers
+
+[fetch]
+    prune = true
+
+[pull]
+    rebase = true
+
+[log]
+    abbrevCommit = true
+    showSignature = true
+
+[rerere]
+    enabled = true
+
+[includeIf "gitdir:~/.pi/"]
+    path = ~/.config/git/pi-config

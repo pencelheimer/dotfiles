@@ -1,0 +1,11 @@
+- omnipkg:
+    install:
+      - xdg-user-dirs
+
+- link:
+    ~/.config/user-dirs.dirs: files/user-dirs.dirs
+    ~/.config/user-dirs.locale: files/user-dirs.locale
+
+- shell:
+    - description: Create user directories
+      command: files/apply.sh

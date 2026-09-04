@@ -1,0 +1,19 @@
+profile "internal only" {
+    output "Chimei Innolux Corporation 0x14C9 Unknown" position 0,0 mode 1920x1080@60.0080 scale 1.00 transform normal
+}
+
+profile "home with LG" {
+    output "Chimei Innolux Corporation 0x14C9 Unknown" position 0,1080 mode 1920x1080@60.0080 scale 1.00 transform normal
+    output "LG Electronics W2353 0x00005ADA" position 0,0 mode 1920x1080@60.0000 scale 1.00 transform normal
+}
+
+profile "sunshine tablet" {
+    output "Chimei Innolux Corporation 0x14C9 Unknown" position 1280,0 mode 1920x1080@60.0080 scale 1.00 transform normal
+    output "PNP(GSS) edid.build 0x00000001" position 0,140 mode 2560x1600@60.0000 scale 2.00 transform normal
+}
+
+profile "home with LD and sunshine tablet" {
+    output "Chimei Innolux Corporation 0x14C9 Unknown" position 1280,1080 mode 1920x1080@60.0080 scale 1.00 transform normal
+    output "PNP(GSS) edid.build 0x00000001" position 0,1220 mode 2560x1600@60.0000 scale 2.00 transform normal
+    output "LG Electronics W2353 0x00005ADA" position 1920,0 mode 1920x1080@60.0000 scale 1.00 transform normal
+}

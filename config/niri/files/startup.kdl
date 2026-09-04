@@ -1,0 +1,5 @@
+spawn-at-startup "noctalia"
+
+spawn-sh-at-startup "vicinae server"
+
+spawn-at-startup "xwayland-satellite"

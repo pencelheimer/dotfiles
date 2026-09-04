@@ -1,0 +1,6 @@
+- omnipkg:
+    install:
+      - kitty
+
+- link:
+    ~/.config/kitty: files

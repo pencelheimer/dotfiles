@@ -1,0 +1,6 @@
+- omnipkg:
+    install:
+      - btop
+
+- link:
+    ~/.config/btop: files

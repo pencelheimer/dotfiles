@@ -1,0 +1,3 @@
+[submodule "plugins/dotbot-omnipkg"]
+	path = plugins/dotbot-omnipkg
+	url = https://github.com/code-maniac/dotbot-omnipkg

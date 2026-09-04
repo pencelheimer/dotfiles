@@ -1,0 +1,1 @@
+/home/pencelheimer/.local/share/chezmoi/dot_config/fish/functions/y.fish

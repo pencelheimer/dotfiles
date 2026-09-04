@@ -1,0 +1,14 @@
+- omnipkg:
+    install:
+      - kdeconnect
+
+- link:
+    ~/.config/systemd/user/kdeconnect.service: files/kdeconnect.service
+    ~/.config/systemd/user/kdeconnect-indicator.service: files/kdeconnect-indicator.service
+
+- shell:
+    - description: Enable kdeconnect service
+      command: systemctl enable --user --now kdeconnect.service
+
+    - description: Enable kdeconnect indicator service
+      command: systemctl enable --user --now kdeconnect-indicator.service

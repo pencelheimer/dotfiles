@@ -1,0 +1,60 @@
+# vim: set ft=dosini:
+
+[com/github/pencelheimer/wdisplays-plus]
+capture-screens=false
+show-overlay=true
+
+[org/gnome/TextEditor]
+highlight-current-line=true
+show-line-numbers=true
+tab-width=uint32 4
+use-system-font=true
+
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+cursor-size=24
+cursor-theme='Bibata-Modern-Classic'
+font-antialiasing='grayscale'
+font-hinting='slight'
+font-name='NotoSans Nerd Font 12'
+font-rgba-order='rgb'
+gtk-theme='adw-gtk3-dark'
+icon-theme='Tela-circle-dark'
+text-scaling-factor=1.0
+toolbar-icons-size='large'
+toolbar-style='both-horiz'
+
+[org/gnome/nautilus/compression]
+default-compression-format='7z'
+
+[org/gnome/nautilus/icon-view]
+default-zoom-level='large'
+
+[org/gnome/nautilus/list-view]
+default-column-order=['name', 'size', 'type', 'owner', 'group', 'permissions', 'date_modified', 'date_accessed', 'date_created', 'recency', 'detailed_type']
+default-visible-columns=['name', 'size', 'date_modified']
+default-zoom-level='small'
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='list-view'
+migrated-gtk-settings=true
+show-create-link=true
+show-delete-permanently=true
+
+[org/gtk/gtk4/settings/file-chooser]
+show-hidden=true
+sort-directories-first=true
+
+[org/gtk/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=196
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'
+window-position=(20, 20)
+window-size=(1904, 1027)

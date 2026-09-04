@@ -1,0 +1,12 @@
+[Unit]
+Description=udiskie mount daemon
+Documentation=https://github.com/coldfix/udiskie
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+ExecStart=udiskie
+Restart=on-failure
+
+[Install]
+WantedBy=graphical-session.target

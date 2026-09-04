@@ -1,0 +1,12 @@
+- omnipkg:
+    install:
+      - yazi
+
+- link:
+    ~/.config/yazi/yazi.toml: files/yazi.toml
+    ~/.config/yazi/keymap.toml: files/keymap.toml
+    ~/.config/yazi/package.toml: files/package.toml
+
+- shell:
+    - description: Installing plugins declared in the package.toml
+      command: ya pkg install --discard
