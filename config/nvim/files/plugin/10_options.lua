@@ -66,6 +66,7 @@ vim.o.foldtext         = '' -- Show text under fold with its highlighting
 
 -- Editing ====================================================================
 vim.o.autoindent       = true     -- Use auto indent
+vim.opt.autoread       = true     -- Auto update file in external changes
 vim.o.expandtab        = true     -- Convert tabs to spaces
 vim.o.formatoptions    = 'rqnl1j' -- Improve comment editing
 vim.o.ignorecase       = true     -- Ignore case during search
