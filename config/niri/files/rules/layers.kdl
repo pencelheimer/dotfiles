@@ -1,6 +1,16 @@
 // https://github.com/YaLTeR/niri/wiki/Configuration:-Layer-Rules
 layer-rule {
     match namespace="notification"
+    match namespace="noctalia-notification"
 
     block-out-from "screencast"
+}
+
+layer-rule {
+    match namespace="noctalia-notification"
+
+    background-effect {
+        blur true
+        xray false
+    }
 }

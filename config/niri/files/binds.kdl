@@ -2,7 +2,7 @@ binds {
     Mod+Shift+Slash  { show-hotkey-overlay; }
     Ctrl+Alt+Delete allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
 
-    Mod+Escape hotkey-overlay-title="Spawn Clipboard manager" { spawn "vicinae" "vicinae://launch/power"; }
+    Mod+Escape hotkey-overlay-title="Spawn Power Menu" { spawn "vicinae" "vicinae://launch/power"; }
     Mod+Shift+Escape { quit; }
 
     Mod+Return hotkey-overlay-title="Spawn Terminal"    { spawn "kitty"; }

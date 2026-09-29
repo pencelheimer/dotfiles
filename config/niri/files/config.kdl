@@ -61,7 +61,7 @@ input {
     }
 
     touchpad {
-                                                 // off // touchpad
+                                                         // off // touchpad
         tap
         dwt // disable while typing
         dwtp // disable while trackpointing
