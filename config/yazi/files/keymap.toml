@@ -1,6 +1,6 @@
 [[mgr.prepend_keymap]]
 on = "<C-d>"
-run = "shell -- dragon-drop $@"
+run = "shell --orphan -- dragon-drop %s"
 desc = "Drag'n'drop selection"
 
 [[mgr.prepend_keymap]]
