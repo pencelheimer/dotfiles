@@ -1,3 +1,5 @@
+vim.loader.enable()
+
 _G.Config = {}
 
 -- NOTE(pencelheimer): Load now to have 'mini.misc' available for custom loading helpers.
