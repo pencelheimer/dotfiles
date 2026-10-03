@@ -1,0 +1,10 @@
+[[scratchpad]]
+name = "music"
+spawn_when_empty = "kitty --app-id cliamp.desktop cliamp"
+
+[[window_rule]]
+match.app_id = "^cliamp.desktop$"
+default_scratchpad = "music"
+
+[keybinds]
+"Mod+M" = "scratchpad-toggle:music"

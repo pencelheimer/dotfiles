@@ -1,0 +1,4 @@
+[[layer_rule]]
+match.namespace = "noctalia-notification"
+blur = false
+blur_optimized = false

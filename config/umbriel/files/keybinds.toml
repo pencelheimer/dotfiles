@@ -1,0 +1,118 @@
+[keybinds]
+# SYSTEM & SESSION CONTROLS
+"Mod+Shift+Slash"  = "cheatsheet-toggle"
+"Ctrl+Alt+Delete"  = { action = "shortcuts-inhibit-toggle", allow_when_inhibited = true }
+"Mod+Escape"        = "spawn:vicinae vicinae://launch/power"
+"Mod+Shift+Escape"  = "session-quit"
+"Mod+U"             = { action = "spawn:noctalia msg session lock", allow_when_locked = true }
+
+# APPLICATION LAUNCHERS
+"Mod+Return"         = "spawn:kitty"
+"Alt+Space"          = "spawn:vicinae toggle"
+"Mod+V"              = "spawn:vicinae vicinae://launch/clipboard/history"
+"Mod+E"              = "spawn:vicinae vicinae://launch/core/search-emojis"
+
+# HARDWARE & MEDIA KEYS (Available when locked)
+"XF86MonBrightnessUp"   = { action = "spawn:brightnessctl s 5%+", allow_when_locked = true }
+"XF86MonBrightnessDown" = { action = "spawn:brightnessctl s 5%-", allow_when_locked = true }
+"XF86AudioRaiseVolume"  = { action = "spawn:wpctl set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+", allow_when_locked = true }
+"XF86AudioLowerVolume"  = { action = "spawn:wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-", allow_when_locked = true }
+"XF86AudioMute"         = { action = "spawn:wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle", allow_when_locked = true }
+"XF86AudioMicMute"      = { action = "spawn:wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle", allow_when_locked = true }
+"XF86AudioPlay"         = { action = "spawn:playerctl play-pause", allow_when_locked = true }
+"Pause"                 = { action = "spawn:playerctl play-pause", allow_when_locked = true }
+"XF86AudioStop"         = { action = "spawn:playerctl stop", allow_when_locked = true }
+"XF86AudioPrev"         = { action = "spawn:playerctl previous", allow_when_locked = true }
+"Shift+Alt+P"           = { action = "spawn:playerctl previous", allow_when_locked = true }
+"XF86AudioNext"         = { action = "spawn:playerctl next", allow_when_locked = true }
+"Shift+Alt+N"           = { action = "spawn:playerctl next", allow_when_locked = true }
+"XF86Keyboard"          = { action = "spawn:input-device-toggle toggle input13", allow_when_locked = true }
+
+# SCREENSHOT & SCREEN RECORDING
+"Print"                 = "spawn:noctalia msg screenshot-region"
+"Mod+Print"             = "spawn:noctalia msg screenshot-fullscreen"
+"Shift+Print"           = "spawn:noctalia msg screenshot-annotate"
+"Mod+Shift+E"           = "spawn:bash -c \"wl-paste | gradia\""
+"Mod+Z"                 = "spawn:gsr-ui launch-show"
+"Alt+F9"                = "spawn:gsr-ui-cli toggle-record"
+
+# WINDOW & COLUMN CONTROLS
+"Mod+Q"                 = "window-close"
+"Mod+P"                 = "window-toggle-floating"
+"Mod+Shift+P"           = "window-focus-switch-floating"
+"Mod+M"                 = "window-toggle-maximize-to-edges"
+"Mod+F"                 = "window-toggle-maximize"
+"Mod+Shift+F"           = "window-toggle-fullscreen"
+"Mod+Ctrl+F"            = "window-toggle-fullscreen"
+"Mod+C"                 = "column-center"
+"Mod+W"                 = "overview-toggle"
+
+# SIZING
+"Mod+R"                 = "window-cycle-primary-extent"
+"Mod+Shift+R"           = "window-cycle-secondary-extent"
+"Mod+Ctrl+R"            = "window-set-secondary-extent:0.5"
+"Mod+Minus"             = "window-modify-primary-extent:-0.01"
+"Mod+Equal"             = "window-modify-primary-extent:0.01"
+"Mod+Shift+Minus"       = "window-modify-secondary-extent:-0.01"
+"Mod+Shift+Equal"       = "window-modify-secondary-extent:0.01"
+
+# FOCUS NAVIGATION
+"Mod+H"                 = "window-focus-left"
+"Mod+J"                 = "window-focus-or-workspace-down"
+"Mod+K"                 = "window-focus-or-workspace-up"
+"Mod+L"                 = "window-focus-right"
+"Mod+Home"              = "column-focus-first"
+"Mod+End"               = "column-focus-last"
+
+# MONITOR FOCUS
+"Mod+Ctrl+H"            = "output-focus-left"
+"Mod+Ctrl+J"            = "output-focus-down"
+"Mod+Ctrl+K"            = "output-focus-up"
+"Mod+Ctrl+L"            = "output-focus-right"
+
+# WINDOW MOVEMENT & COLUMN MANIPULATION
+"Mod+Shift+H"           = "window-consume-or-expel-left"
+"Mod+Shift+J"           = "window-move-or-workspace-down"
+"Mod+Shift+K"           = "window-move-or-workspace-up"
+"Mod+Shift+L"           = "window-consume-or-expel-right"
+"Mod+Shift+Home"        = "column-move-to-first"
+"Mod+Shift+End"         = "column-move-to-last"
+
+# COLUMN MOVE TO MONITOR
+"Mod+Shift+Ctrl+H"      = "column-move-to-output-left"
+"Mod+Shift+Ctrl+J"      = "column-move-to-output-down"
+"Mod+Shift+Ctrl+K"      = "column-move-to-output-up"
+"Mod+Shift+Ctrl+L"      = "column-move-to-output-right"
+
+# WORKSPACES
+"Mod+S"                 = "workspace-switch:social"
+"Mod+B"                 = "workspace-switch:browser"
+"Mod+Shift+D"           = "workspace-move-down"
+"Mod+Shift+U"           = "workspace-move-up"
+"Mod+N"                 = "workspace-swap-active-output-next"
+"Mod+Shift+N"           = "workspace-swap-active-output-previous"
+
+"Mod+1"                 = "workspace-switch:terminal"
+"Mod+2"                 = "workspace-switch:browser"
+"Mod+3"                 = "workspace-switch:other"
+"Mod+4"                 = "workspace-switch:social"
+"Mod+5"                 = "workspace-switch:5"
+"Mod+6"                 = "workspace-switch:6"
+
+"Mod+Shift+1"           = "column-move-to-workspace:terminal"
+"Mod+Shift+2"           = "column-move-to-workspace:browser"
+"Mod+Shift+3"           = "column-move-to-workspace:other"
+"Mod+Shift+4"           = "column-move-to-workspace:social"
+"Mod+Shift+5"           = "column-move-to-workspace:5"
+"Mod+Shift+6"           = "column-move-to-workspace:6"
+
+# MOUSE WHEEL BINDINGS
+"Mod+WheelDown"         = { action = "workspace-next", cooldown_ms = 150 }
+"Mod+WheelUp"           = { action = "workspace-previous", cooldown_ms = 150 }
+"Mod+WheelRight"        = "layout-scroll-right"
+"Mod+WheelLeft"         = "layout-scroll-left"
+
+"Mod+Shift+WheelDown"   = { action = "column-move-to-workspace-next", cooldown_ms = 150 }
+"Mod+Shift+WheelUp"     = { action = "column-move-to-workspace-previous", cooldown_ms = 150 }
+"Mod+Shift+WheelRight"  = "column-move-right"
+"Mod+Shift+WheelLeft"   = "column-move-left"

@@ -1,0 +1,23 @@
+[appearance]
+prefer_no_csd = true
+border_width = 2
+corner_radius = 0
+
+[appearance.shadow]
+enabled = true
+
+[appearance.blur]
+enabled = true
+optimized = true
+passes = 3
+radius = 5
+
+[colors]
+accent_primary = "#ffdd33"
+insert_hint = "#ffdd3380"
+error = "#f43841"
+
+[colors.border]
+focused = "#ffdd33"
+unfocused = "#95a99f"
+outer = "#96a6c8"

@@ -1,0 +1,89 @@
+[general]
+mod_key = "Super"
+autostart = [
+    "noctalia"
+]
+xwayland = true
+show_cheatsheet = false
+
+[include]
+files = [
+    "appearance.toml",
+    "outputs.toml",
+    "workspaces.toml",
+    "keybinds.toml",
+    "rules/layerrules.toml",
+    "rules/windowrules.toml",
+    "scratchpads.toml",
+]
+
+[input]
+middle_click_paste = false
+
+# --- Environment Variables ---
+[environment]
+GDK_BACKEND = "wayland"
+SDL_VIDEODRIVER = "wayland"
+CLUTTER_BACKEND = "wayland"
+QT_QPA_PLATFORM = "wayland"
+QT_AUTO_SCREEN_SCALE_FACTOR = "1"
+QT_WAYLAND_DISABLE_WINDOWDECORATION = "1"
+QT_QPA_PLATFORMTHEME = "qt6ct"
+MOZ_ENABLE_WAYLAND = "1"
+MOZ_WEBRENDER = "1"
+ELECTRON_OZONE_PLATFORM_HINT = "auto"
+
+# --- Cursor Configuration ---
+[input.cursor]
+theme = "Bibata-Modern-Classic"
+size = 24
+hide_timeout_ms = 1000
+follows_focus = true
+
+# --- Focus Settings ---
+[input.focus]
+follows_mouse = true
+follows_mouse_max_scroll = 0.25
+
+# --- Keyboard Settings ---
+[input.keyboard]
+layout = "us,ua"
+options = "grp:win_space_toggle, grp:shifts_toggle"
+repeat_rate = 30
+repeat_delay = 200
+
+# --- Touchpad Settings ---
+[input.touchpad]
+tap = true
+disable_while_typing = true
+disable_on_external_mouse = false
+natural_scroll = true
+accel_profile = "flat"
+scroll_factor = 0.4
+tap_button_map = "left_right_middle"
+
+# --- Mouse Settings ---
+[input.mouse]
+accel_profile = "flat"
+sensitivity = 0.4
+
+# --- TrackPoint Overrides ---
+[[input.device]]
+name = "*TrackPoint*"
+accel_profile = "flat"
+sensitivity = 0.2
+
+# --- Layout Management ---
+[layout]
+mode = "scrolling"
+gap = 0
+extent_presets = [0.33333, 0.5, 0.66667]
+
+[layout.scrolling]
+center_focused = "never"
+center_underfull_strip = true
+default_extent_fraction = 0.5
+
+# --- Hardware / Switch Events ---
+[events]
+lid_close = "noctalia msg session lock-and-suspend"

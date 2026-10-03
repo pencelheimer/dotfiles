@@ -1,0 +1,18 @@
+# Umbriel Workspaces Configuration
+# Ported from rules/workspaces.kdl
+
+[[workspace]]
+name = "terminal"
+output = "eDP-1"
+
+[[workspace]]
+name = "browser"
+output = "eDP-1"
+
+[[workspace]]
+name = "other"
+output = "eDP-1"
+
+[[workspace]]
+name = "social"
+output = "eDP-1"

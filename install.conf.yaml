@@ -42,6 +42,7 @@
 - include: config/starship/dotbot-starship.yaml
 - include: config/tealdeer/dotbot-tealdeer.yaml
 - include: config/udiskie/dotbot-udiskie.yaml
+- include: config/umbriel/dotbot-umbriel.yaml
 - include: config/user-dirs/dotbot-user-dirs.yaml
 - include: config/xdg-desktop-portal/dotbot-xdg-desktop-portal.yaml
 - include: config/xdg-terminals/dotbot-xdg-terminals.yaml

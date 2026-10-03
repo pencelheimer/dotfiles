@@ -1,0 +1,106 @@
+[[window_rule]]
+match.app_id = "^org[.]pulseaudio[.]pavucontrol$"
+default_floating = true
+default_floating_size_px = { width = 800, height = 460 }
+
+[[window_rule]]
+match.app_id = "^org[.]kde[.]kdeconnect[.]handler$"
+default_floating = true
+
+[[window_rule]]
+match.app_id = "^telegram[.]desktop$"
+default_workspace = "social"
+default_scrolling_extent = 1.0
+
+[[window_rule]]
+match.app_id = "^google-chat-linux$"
+default_workspace = "social"
+default_scrolling_extent = 1.0
+
+[[window_rule]]
+match.app_id = "^vesktop$"
+default_workspace = "social"
+default_scrolling_extent = 1.0
+
+[[window_rule]]
+match.app_id = "^thunderbird$"
+default_workspace = "social"
+default_scrolling_extent = 1.0
+
+[[window_rule]]
+match.app_id = "^cinny$"
+default_workspace = "social"
+default_scrolling_extent = 1.0
+
+[[window_rule]]
+match.app_id = "^signalbeta$"
+default_workspace = "social"
+default_scrolling_extent = 1.0
+
+[[window_rule]]
+match.app_id = "^electron$"
+match.title = ".*Chat.*"
+default_workspace = "social"
+default_scrolling_extent = 1.0
+
+[[window_rule]]
+match.app_id = "^kitty$"
+default_workspace = "terminal"
+default_scrolling_extent = 1.0
+
+[[window_rule]]
+match.app_id = "^org[.]gnome[.]NautilusPreviewer$"
+default_floating = true
+
+[[window_rule]]
+match.app_id = "^re[.]sonny[.]Junction$"
+default_floating = true
+
+[[window_rule]]
+match.app_id = "^steam$"
+match.title = "^Special Offers$"
+default_floating = true
+default_maximize = false
+default_floating_size_px = { width = 460, height = 800 }
+
+[[window_rule]]
+match.app_id = "^steam$"
+match.title = "^Friends List$"
+default_floating = true
+default_maximize = false
+
+[[window_rule]]
+match.app_id = "^org[.]kde[.]kdeconnect[.]daemon$"
+default_floating = true
+default_maximize = false
+default_fullscreen = false
+default_focused = false
+border_width = 0
+shadow = false
+default_floating_size_px = { width = 1920, height = 1080 }
+default_position = { anchor = "top_left", x = 0, y = 0 }
+
+[[window_rule]]
+match.title = "^Picture-in-[Pp]icture$"
+default_floating = true
+default_floating_size_px = { width = 500, height = 280 }
+
+[[window_rule]]
+match.app_id = "^jetbrains-idea-ce$"
+default_floating = true
+default_floating_size_px = { width = 500, height = 280 }
+
+[[window_rule]]
+match.app_id = "^(zen|zen-twilight|helium|chromium)$"
+default_workspace = "browser"
+default_scrolling_extent = 1.0
+
+[[window_rule]]
+match.title = "^gsr notify$"
+default_position = { anchor = "top_right", x = 4, y = 4 }
+
+[[window_rule]]
+match.app_id = "^cliamp[.]desktop$"
+border_width = 5
+border_color_unfocused = "#238636"
+default_scrolling_extent = 0.33
