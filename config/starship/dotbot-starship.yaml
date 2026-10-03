@@ -1,0 +1,6 @@
+- omnipkg:
+    install:
+      - starship
+
+- link:
+    ~/.config/starship.toml: files/config.toml

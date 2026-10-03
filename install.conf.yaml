@@ -39,6 +39,7 @@
 - include: config/obs/dotbot-obs.yaml
 - include: config/paru/dotbot-paru.yaml
 - include: config/pipewire/dotbot-pipewire.yaml
+- include: config/starship/dotbot-starship.yaml
 - include: config/tealdeer/dotbot-tealdeer.yaml
 - include: config/udiskie/dotbot-udiskie.yaml
 - include: config/user-dirs/dotbot-user-dirs.yaml
